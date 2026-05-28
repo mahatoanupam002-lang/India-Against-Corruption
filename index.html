@@ -583,6 +583,146 @@
     transform: translateY(0);
   }
 
+  /* ── LOOPHOLES SECTION ── */
+  .loopholes-section {
+    padding: 50px 40px 0;
+    border-bottom: 2px solid var(--ink);
+  }
+  .loopholes-intro { max-width: 800px; margin-bottom: 40px; }
+  .loopholes-intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .loopholes-intro h2 em { color: var(--rust); }
+  .loopholes-intro > p { font-size: 12px; line-height: 1.9; color: var(--ash); }
+  .loophole-card {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    border-top: 1px solid var(--aged);
+    padding: 40px 0;
+  }
+  .loophole-card:last-of-type { border-bottom: 1px solid var(--aged); }
+  .lp-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 900;
+    color: var(--ink);
+    opacity: 0.08;
+    line-height: 1;
+    padding-top: 2px;
+  }
+  .lp-body { padding-left: 24px; }
+  .lp-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  .lp-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .lp-label {
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 4px 10px;
+    margin-bottom: 14px;
+  }
+  .lp-label-problem { background: var(--rust); color: white; }
+  .lp-label-fix { background: var(--saffron); color: white; }
+  .lp-problem p { font-size: 11px; line-height: 1.9; color: var(--ash); }
+  .fix-item {
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--aged);
+  }
+  .fix-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .fix-item strong {
+    display: block;
+    color: var(--dark);
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+  .fix-item p { font-size: 11px; line-height: 1.9; color: var(--ash); }
+
+  /* ── BLUEPRINT ── */
+  .blueprint-row {
+    padding: 50px 40px;
+    border-bottom: 2px solid var(--ink);
+    background: var(--dark);
+    color: var(--paper);
+  }
+  .blueprint-row h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--paper);
+    margin-bottom: 16px;
+  }
+  .blueprint-intro {
+    font-size: 12px;
+    line-height: 1.9;
+    color: rgba(245,239,224,0.65);
+    max-width: 640px;
+    margin-bottom: 36px;
+  }
+  .blueprint-diagram {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    line-height: 1.8;
+    color: var(--saffron);
+    background: rgba(0,0,0,0.35);
+    border: 1px solid rgba(230,126,34,0.2);
+    padding: 28px 36px;
+    overflow-x: auto;
+    white-space: pre;
+    max-width: 700px;
+    margin-bottom: 40px;
+  }
+  .blueprint-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid rgba(245,239,224,0.1);
+    padding-top: 32px;
+    gap: 32px;
+  }
+  .pillar-label {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 10px;
+  }
+  .pillar h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--paper);
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  .pillar p { font-size: 11px; line-height: 1.8; color: rgba(245,239,224,0.6); }
+  .blueprint-tag {
+    display: inline-block;
+    background: rgba(230,126,34,0.18);
+    color: var(--saffron);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    margin-bottom: 16px;
+  }
+
   /* ── REDUCED MOTION ── */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
@@ -611,6 +751,16 @@
     footer { flex-direction: column; gap: 12px; text-align: center; }
     table { min-width: 600px; }
     .back-to-top { bottom: 20px; right: 20px; }
+    .loopholes-section { padding: 40px 20px 0; }
+    .loophole-card { grid-template-columns: 1fr; padding: 32px 0; }
+    .lp-num { display: none; }
+    .lp-body { padding-left: 0; }
+    .lp-cols { grid-template-columns: 1fr; gap: 24px; }
+    .blueprint-row { padding: 40px 20px; }
+    .blueprint-pillars { grid-template-columns: 1fr; gap: 0; }
+    .pillar { border-bottom: 1px solid rgba(245,239,224,0.1); padding-bottom: 24px; margin-bottom: 24px; }
+    .pillar:last-child { border-bottom: none; margin-bottom: 0; }
+    .blueprint-diagram { font-size: 9px; padding: 16px 20px; }
   }
 </style>
 </head>
@@ -633,6 +783,8 @@
     <a href="#deep-dive">Deep Dive</a>
     <a href="#cases">Cases</a>
     <a href="#solutions">Solutions</a>
+    <a href="#loopholes">Loopholes</a>
+    <a href="#blueprint">Blueprint</a>
   </div>
 </nav>
 
@@ -826,6 +978,145 @@
   </div>
 </div>
 
+<!-- LOOPHOLES & FIXES -->
+<section class="loopholes-section" id="loopholes">
+  <div class="loopholes-intro reveal">
+    <div class="section-tag">Systemic Analysis</div>
+    <h2>Closing the <em>Loopholes</em></h2>
+    <p>To dismantle corruption we must look past moral statements and focus on systemic vulnerabilities. Corruption is primarily an incentive problem: when breaking the law is easy and compliance is slow and painful, corruption thrives. Below are four structural loopholes — and the precise engineering needed to close them.</p>
+  </div>
+
+  <div class="loophole-card reveal">
+    <div class="lp-num" aria-hidden="true">01</div>
+    <div class="lp-body">
+      <h3>Bureaucratic Delays &amp; Administrative Discretion</h3>
+      <div class="lp-cols">
+        <div class="lp-problem">
+          <span class="lp-label lp-label-problem">The Loophole</span>
+          <p>The greatest catalyst for low-level graft is bureaucratic discretion and intentional delays. When a single local officer holds absolute authority to approve or stall a license, they hold a monopoly. Citizens are forced to pay "speed money" simply to get a timeline on their applications.</p>
+        </div>
+        <div class="lp-fix-body">
+          <span class="lp-label lp-label-fix">The Fix: Disintermediation via DPI</span>
+          <div class="fix-item">
+            <strong>Faceless Administration</strong>
+            <p>Human contact removed from routine approvals. Applications routed through a central digital pool and auto-assigned to anonymous officers nationwide — eliminating local kickbacks entirely.</p>
+          </div>
+          <div class="fix-item">
+            <strong>Automated Deemed Approvals</strong>
+            <p>If a department fails to clear an eligible file within a legally mandated timeframe (e.g. 15 days), the system automatically grants a "Deemed Approved" certificate — stripping the bureaucrat of delaying power.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="loophole-card reveal">
+    <div class="lp-num" aria-hidden="true">02</div>
+    <div class="lp-body">
+      <h3>Leakage in Public Procurement &amp; Infrastructure Tenders</h3>
+      <div class="lp-cols">
+        <div class="lp-problem">
+          <span class="lp-label lp-label-problem">The Loophole</span>
+          <p>Public contracts are manipulated through tailored tender specifications designed to favour a specific contractor, or through hidden cartel arrangements. Once secured, lower-quality materials cover the cost of the kickback — producing infrastructure that fails within years.</p>
+        </div>
+        <div class="lp-fix-body">
+          <span class="lp-label lp-label-fix">The Fix: Public Procurement Reforms</span>
+          <div class="fix-item">
+            <strong>Independent Forensic Audits &amp; Smart Alerts</strong>
+            <p>Automated screening algorithms across all government e-marketplace platforms, flagging sudden bid withdrawals, identical pricing from separate entities, or unusually narrow tender parameters.</p>
+          </div>
+          <div class="fix-item">
+            <strong>Public Open-Contracting Portals</strong>
+            <p>Every invoice, raw material spec, and payment milestone for public works hosted on an open-access dashboard — giving citizen coalitions and journalists real-time visibility into the exact cost per km of every highway.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="loophole-card reveal">
+    <div class="lp-num" aria-hidden="true">03</div>
+    <div class="lp-body">
+      <h3>Judicial Bottlenecks &amp; Low Conviction Rates</h3>
+      <div class="lp-cols">
+        <div class="lp-problem">
+          <span class="lp-label lp-label-problem">The Loophole</span>
+          <p>India's judiciary carries over 50 million pending cases. Complex financial fraud trials drag on 10–15 years. Corrupt actors know that even if caught by the CBI, the probability of immediate punishment is minimal. Slow justice systematically dilutes deterrence.</p>
+        </div>
+        <div class="lp-fix-body">
+          <span class="lp-label lp-label-fix">The Fix: Judicial Upgrades &amp; Sunset Clauses</span>
+          <div class="fix-item">
+            <strong>Dedicated Financial Crime Benches</strong>
+            <p>Specialized fast-track courts solely for public corruption and corporate fraud under the Prevention of Corruption Act and PMLA — with a statutory mandate to deliver a final verdict within 12–18 months.</p>
+          </div>
+          <div class="fix-item">
+            <strong>Procedural Simplification</strong>
+            <p>Strict limits on strategic adjournments. An enlarged cadre of forensic accountants in state investigative agencies ensures financial evidence is trial-ready from day one.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="loophole-card reveal">
+    <div class="lp-num" aria-hidden="true">04</div>
+    <div class="lp-body">
+      <h3>The Real Estate &amp; Land Registration Matrix</h3>
+      <div class="lp-cols">
+        <div class="lp-problem">
+          <span class="lp-label lp-label-problem">The Loophole</span>
+          <p>Real estate remains the largest sink for black money. The primary loophole is the divergence between the Circle Rate (the government's official minimum land value) and the actual Market Rate. Transactions are split: part paid digitally at circle rate, the rest in untraceable cash.</p>
+        </div>
+        <div class="lp-fix-body">
+          <span class="lp-label lp-label-fix">The Fix: Data Integration &amp; Immutable Ledgers</span>
+          <div class="fix-item">
+            <strong>Dynamic Market-Linked Circle Rates</strong>
+            <p>Data analytics engines continuously adjust circle rates based on real-world transaction patterns in local micro-markets — closing the artificial pricing gap that enables cash transactions.</p>
+          </div>
+          <div class="fix-item">
+            <strong>Unified Asset Mapping</strong>
+            <p>Land ownership records linked directly with national tax databases. Automated cross-matching instantly triggers unexplained wealth inquiries when an individual's asset value exceeds reported income.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRUCTURAL BLUEPRINT -->
+<div class="blueprint-row reveal" id="blueprint">
+  <span class="blueprint-tag">Structural Blueprint</span>
+  <h2>The Ultimate Structural Blueprint</h2>
+  <p class="blueprint-intro">True reform does not rely on changing human nature; it relies on building a system where transparency is the default path of least resistance.</p>
+  <pre class="blueprint-diagram">┌────────────────────────────────────────────────────────┐
+│             THE TRADITIONAL LOOPHOLE SYSTEM            │
+│  Manual Filings ➔ High Bureaucratic Contact ➔ Delays   │
+└───────────────────────────┬────────────────────────────┘
+                            │  [The Structural Pivot]
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│             THE TRANSPARENT COMPLIANCE SYSTEM          │
+│  Faceless Portals ➔ Algorithmic Audits ➔ Swift Courts  │
+└────────────────────────────────────────────────────────┘</pre>
+  <div class="blueprint-pillars">
+    <div class="pillar">
+      <span class="pillar-label">Pillar One</span>
+      <h4>Faceless Digital Administration</h4>
+      <p>Remove human discretion from routine processes. Automate approvals, anonymize officer assignments, mandate digital timelines with legal consequences for delay.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-label">Pillar Two</span>
+      <h4>Stringent Procurement Monitoring</h4>
+      <p>Deploy algorithmic audits across all public tenders. Mandate open-contracting portals for full public visibility into every rupee of public expenditure.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-label">Pillar Three</span>
+      <h4>Fast-tracked Judicial Timelines</h4>
+      <p>Dedicated financial crime courts with 12–18 month verdict mandates. Forensic accounting capacity embedded in investigative agencies from the point of arrest.</p>
+    </div>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <p>All statistics flagged where approximate. Verify via CAG reports, Transparency International, and SC judgments.</p>
@@ -858,7 +1149,7 @@
 
   // Active nav section highlight
   const navLinks = document.querySelectorAll('.site-nav a');
-  const sectionIds = ['stats', 'channels', 'deep-dive', 'cases', 'solutions'];
+  const sectionIds = ['stats', 'channels', 'deep-dive', 'cases', 'solutions', 'loopholes', 'blueprint'];
   const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
 
   const navObserver = new IntersectionObserver((entries) => {
