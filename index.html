@@ -236,6 +236,112 @@
     border-left: 3px solid var(--saffron);
     padding-left: 20px;
   }
+  .hero-actions {
+    margin-top: 32px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+  }
+  .hero-btn-primary { background: var(--rust); color: var(--paper); border-color: var(--rust); }
+  .hero-btn-primary:hover { background: #a93226; border-color: #a93226; }
+  .hero-btn-secondary { background: transparent; color: var(--ink); border-color: var(--ink); }
+  .hero-btn-secondary:hover { background: var(--ink); color: var(--paper); }
+  .hero-share-hint {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ash);
+    margin-left: 4px;
+  }
+
+  /* ── SHARE WIDGET ── */
+  .share-widget {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 290;
+  }
+  .share-widget-btn {
+    width: 38px;
+    height: 38px;
+    background: var(--aged);
+    border: 1px solid rgba(26,18,9,0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: var(--ash);
+    text-decoration: none;
+    transition: background 0.18s, color 0.18s;
+    position: relative;
+  }
+  .share-widget-btn:hover { background: var(--ink); color: var(--paper); }
+  .share-widget-tip {
+    position: absolute;
+    right: 44px;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 1px;
+    padding: 4px 8px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s;
+  }
+  .share-widget-btn:hover .share-widget-tip { opacity: 1; }
+  .copy-toast {
+    position: fixed;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%) translateY(14px);
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 9px 20px;
+    opacity: 0;
+    transition: opacity 0.28s, transform 0.28s;
+    pointer-events: none;
+    z-index: 700;
+  }
+  .copy-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* ── STATS TIMESTAMP ── */
+  .stats-updated {
+    font-size: 9px;
+    color: var(--ash);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 10px 28px;
+    border-top: 1px solid var(--aged);
+    text-align: right;
+    opacity: 0.75;
+  }
   .hero-rupee-bg {
     position: absolute;
     right: -20px;
@@ -1419,6 +1525,9 @@
     footer { flex-direction: column; gap: 12px; text-align: center; }
     table { min-width: 600px; }
     .back-to-top { bottom: 20px; right: 20px; }
+    .share-widget { display: none; }
+    .hero-actions { gap: 8px; }
+    .hero-btn { padding: 10px 16px; font-size: 9px; }
     .plain-fixes-header { padding: 40px 20px 30px; }
     .plain-fix-grid { grid-template-columns: 1fr; }
     .plain-fix-card { border-right: 1px solid var(--ink); }
@@ -1508,7 +1617,6 @@
       </button>
       <div class="nav-dropdown" role="menu">
         <a href="#watchdogs" role="menuitem">Watchdogs</a>
-        <a href="#watchdog-system" role="menuitem">System</a>
         <a href="#toolkit" role="menuitem">Toolkit</a>
       </div>
     </div>
@@ -1524,6 +1632,15 @@
   <div class="hero-kicker">Special Investigation</div>
   <h1>The <em>Drain.</em><br>Where does your<br>tax money go?</h1>
   <p class="hero-subhead">India collects over ₹30 lakh crore in taxes annually. A significant share never reaches the citizens it was meant to serve — siphoned through procurement fraud, policy capture, and institutionalized corruption.</p>
+
+  <div class="hero-actions">
+    <a href="#toolkit" class="hero-btn hero-btn-primary">Report Corruption →</a>
+    <a href="#cases" class="hero-btn hero-btn-secondary">See Documented Cases</a>
+    <span class="hero-share-hint">or share this page:</span>
+    <button class="hero-btn hero-btn-secondary" onclick="shareX()" aria-label="Share on X">𝕏</button>
+    <button class="hero-btn hero-btn-secondary" onclick="shareWhatsApp()" aria-label="Share on WhatsApp">WhatsApp</button>
+    <button class="hero-btn hero-btn-secondary" onclick="copyLink()" aria-label="Copy link">Copy Link</button>
+  </div>
 
   <div class="stats-bar" id="stats">
     <div class="stat-item">
@@ -1547,6 +1664,7 @@
       <div class="stat-note">Approximate — academic estimates vary</div>
     </div>
   </div>
+  <div class="stats-updated">Sources: Transparency International CPI 2024 · CAG Reports · Lokpal Annual Report 2024 · IPaidABribe.com — Last updated May 2026</div>
 </section>
 
 <!-- THREE CHANNELS -->
@@ -1649,7 +1767,7 @@
           <td>PNB–Nirav Modi Fraud</td>
           <td>~₹13,000 Cr</td>
           <td>Fraudulent Letters of Undertaking issued by bank officials; funds remitted abroad</td>
-          <td>Nirav Modi extradited; trial ongoing in India as of 2024</td>
+          <td>Nirav Modi extradited; trial ongoing in India as of 2025</td>
           <td><span class="severity sev-high">High</span></td>
         </tr>
         <tr>
@@ -1668,16 +1786,23 @@
         </tr>
         <tr>
           <td>Electoral Bonds (policy capture)</td>
-          <td>₹16,518 Cr donated (2018–2024); quid pro quo alleged by SC</td>
-          <td>Anonymous corporate donations → regulatory favours returned to donors</td>
-          <td>SC struck down scheme (Feb 2024); ED probes ongoing</td>
-          <td><span class="severity sev-medium">Medium</span></td>
+          <td>₹16,518 Cr in bonds sold (2018–2024); systematic quid pro quo documented by SC</td>
+          <td>Anonymous corporate bonds used to fund ruling parties; data shows companies under ED/CBI probe donated and received regulatory relief</td>
+          <td>SC unanimously struck down scheme (Feb 2024); SBI ordered to disclose all bond data; ED probes ongoing as of 2025</td>
+          <td><span class="severity sev-critical">Critical</span></td>
+        </tr>
+        <tr>
+          <td>NEET-UG Paper Leak (2024)</td>
+          <td>~₹30–50 lakh per seat; 24 lakh+ students affected nationwide</td>
+          <td>Medical entrance question paper leaked in Bihar, Jharkhand, and Gujarat before exam date; syndicate sold papers to candidates</td>
+          <td>CBI investigation; 50+ arrests including exam centre operators; NTA chief replaced; SC monitored re-test; systemic NTA overhaul ordered 2024</td>
+          <td><span class="severity sev-critical">Critical</span></td>
         </tr>
         <tr>
           <td>Commonwealth Games Scam (2010)</td>
           <td>~₹70,000 Cr (CAG estimate of irregular expenditure)</td>
           <td>Procurement fraud across 30+ contracts; inflated costs for venues, equipment, and services</td>
-          <td>CBI filed chargesheets; multiple accused; trials proceeding slowly as of 2024</td>
+          <td>CBI filed chargesheets; multiple accused; trials proceeding slowly as of 2025</td>
           <td><span class="severity sev-critical">Critical</span></td>
         </tr>
         <tr>
@@ -1698,7 +1823,7 @@
           <td>Adarsh Housing Scam (Mumbai)</td>
           <td>~₹163 Cr+ in land value misappropriated</td>
           <td>Society built for Kargil war widows captured by politicians, bureaucrats, and military officers for personal allotments</td>
-          <td>Inquiry report submitted; CM resigned; limited criminal action as of 2024</td>
+          <td>Inquiry report submitted; CM resigned; limited criminal action as of 2025</td>
           <td><span class="severity sev-high">High</span></td>
         </tr>
       </tbody>
@@ -2059,11 +2184,10 @@
   </div>
 </div>
 
-<!-- WATCHDOG SYSTEM -->
 <section class="watchdog-sys-section reveal" id="watchdog-system">
   <div class="ws-header">
-    <div class="section-tag">System Integration</div>
-    <h2>Weaponizing the <em>Watchdogs</em></h2>
+    <div class="section-tag">How to Use Them Together</div>
+    <h2>The Integrated <em>Pipeline</em></h2>
     <p>India already has Lokpal, CVC, CBI, and CAG. The missing piece is a connected, automated pipeline that routes citizen complaints to the right body — and holds that body to a hard deadline.</p>
   </div>
   <div class="ws-body">
@@ -2543,7 +2667,7 @@
 
   // Active nav section highlight
   const navLinks = document.querySelectorAll('.site-nav a');
-  const sectionIds = ['stats', 'channels', 'deep-dive', 'cases', 'plain-fixes', 'sectors', 'watchdogs', 'watchdog-system', 'toolkit', 'loopholes', 'radical-plan', 'voices'];
+  const sectionIds = ['stats', 'channels', 'deep-dive', 'cases', 'plain-fixes', 'sectors', 'watchdogs', 'toolkit', 'loopholes', 'radical-plan', 'voices'];
   const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
 
   const navObserver = new IntersectionObserver((entries) => {
@@ -2602,6 +2726,43 @@
       });
     });
   });
+
+  // Share functions
+  function shareX() {
+    const text = 'India loses ₹50,000+ crore annually to corruption. Read the full investigation:';
+    const url = encodeURIComponent(window.location.href);
+    window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + url, '_blank', 'noopener');
+  }
+  function shareWhatsApp() {
+    const text = encodeURIComponent('India loses ₹50,000+ crore annually to corruption. Read the full investigation: ' + window.location.href);
+    window.open('https://api.whatsapp.com/send?text=' + text, '_blank', 'noopener');
+  }
+  function copyLink() {
+    navigator.clipboard.writeText(window.location.href).then(() => showToast('Link copied'));
+  }
+  function showToast(msg) {
+    const t = document.getElementById('copy-toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2400);
+  }
 </script>
+
+<!-- FLOATING SHARE WIDGET -->
+<div class="share-widget" aria-label="Share this page">
+  <button class="share-widget-btn" onclick="shareX()" aria-label="Share on X">
+    𝕏<span class="share-widget-tip">Share on X</span>
+  </button>
+  <button class="share-widget-btn" onclick="shareWhatsApp()" aria-label="Share on WhatsApp">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.278 7.051L.786 23.49l4.549-1.462A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.374l-.36-.214-3.716 1.194 1.213-3.618-.235-.372A9.818 9.818 0 0112 2.182c5.424 0 9.818 4.394 9.818 9.818 0 5.425-4.394 9.818-9.818 9.818z"/></svg>
+    <span class="share-widget-tip">Share on WhatsApp</span>
+  </button>
+  <button class="share-widget-btn" onclick="copyLink()" aria-label="Copy page link">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+    <span class="share-widget-tip">Copy link</span>
+  </button>
+</div>
+<div class="copy-toast" id="copy-toast" aria-live="polite"></div>
+
 </body>
 </html>
