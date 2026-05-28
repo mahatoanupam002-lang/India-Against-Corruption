@@ -482,41 +482,6 @@
   }
 
   /* ── SOLUTIONS ── */
-  .solutions-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border-bottom: 2px solid var(--ink);
-  }
-  .sol-card {
-    padding: 36px 28px;
-    border-right: 1px solid var(--ink);
-    transition: background 0.3s;
-  }
-  .sol-card:last-child { border-right: none; }
-  .sol-card:hover { background: var(--dark); color: var(--paper); }
-  .sol-card:hover .sol-icon { color: var(--saffron); }
-  .sol-card:hover h3 { color: var(--paper); }
-  .sol-card:hover p { color: rgba(245,239,224,0.7); }
-  .sol-icon {
-    font-size: 28px;
-    margin-bottom: 16px;
-    transition: color 0.3s;
-    display: block;
-  }
-  .sol-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    margin-bottom: 12px;
-    line-height: 1.2;
-    transition: color 0.3s;
-  }
-  .sol-card p {
-    font-size: 11px;
-    line-height: 1.8;
-    color: var(--ash);
-    transition: color 0.3s;
-  }
-
   /* ── FOOTER ── */
   footer {
     padding: 30px 40px;
@@ -655,74 +620,6 @@
   .fix-item p { font-size: 11px; line-height: 1.9; color: var(--ash); }
 
   /* ── BLUEPRINT ── */
-  .blueprint-row {
-    padding: 50px 40px;
-    border-bottom: 2px solid var(--ink);
-    background: var(--dark);
-    color: var(--paper);
-  }
-  .blueprint-row h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--paper);
-    margin-bottom: 16px;
-  }
-  .blueprint-intro {
-    font-size: 12px;
-    line-height: 1.9;
-    color: rgba(245,239,224,0.65);
-    max-width: 640px;
-    margin-bottom: 36px;
-  }
-  .blueprint-diagram {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
-    line-height: 1.8;
-    color: var(--saffron);
-    background: rgba(0,0,0,0.35);
-    border: 1px solid rgba(230,126,34,0.2);
-    padding: 28px 36px;
-    overflow-x: auto;
-    white-space: pre;
-    max-width: 700px;
-    margin-bottom: 40px;
-  }
-  .blueprint-pillars {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border-top: 1px solid rgba(245,239,224,0.1);
-    padding-top: 32px;
-    gap: 32px;
-  }
-  .pillar-label {
-    display: block;
-    font-size: 9px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--saffron);
-    margin-bottom: 10px;
-  }
-  .pillar h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--paper);
-    margin-bottom: 10px;
-    line-height: 1.2;
-  }
-  .pillar p { font-size: 11px; line-height: 1.8; color: rgba(245,239,224,0.6); }
-  .blueprint-tag {
-    display: inline-block;
-    background: rgba(230,126,34,0.18);
-    color: var(--saffron);
-    font-size: 9px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    margin-bottom: 16px;
-  }
-
   /* ── VOICES SECTION ── */
   .voices-section { border-bottom: 2px solid var(--ink); }
   .voices-header {
@@ -873,45 +770,6 @@
   }
 
   /* ── SECTOR BREAKDOWN ── */
-  .sectors-section {
-    border-bottom: 2px solid var(--ink);
-  }
-  .sectors-header {
-    padding: 50px 40px 36px;
-    border-bottom: 1px solid var(--aged);
-  }
-  .sectors-header h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 38px;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 14px;
-  }
-  .sectors-header h2 em { color: var(--rust); }
-  .sectors-header p { font-size: 12px; line-height: 1.9; color: var(--ash); max-width: 700px; }
-  .sectors-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-top: 1px solid var(--ink);
-    border-left: 1px solid var(--ink);
-  }
-  .sector-card {
-    padding: 32px;
-    border-right: 1px solid var(--ink);
-    border-bottom: 1px solid var(--ink);
-    transition: background 0.3s;
-  }
-  .sector-card:hover { background: var(--aged); }
-  .sector-rank {
-    font-size: 9px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--ash);
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
   .sector-rank-dot {
     width: 8px;
     height: 8px;
@@ -922,15 +780,25 @@
   .dot-critical { background: var(--rust); }
   .dot-high { background: var(--saffron); }
   .dot-medium { background: var(--gold); }
-  .sector-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--dark);
-    margin-bottom: 10px;
-    line-height: 1.2;
+  .sector-bp-severity {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 28px 4px;
   }
-  .sector-card p { font-size: 11px; line-height: 1.85; color: var(--ash); margin-bottom: 12px; }
+  .sector-severity-tag {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--ash);
+  }
+  .sector-severity-tag.tag-critical { color: var(--rust); }
+  .sector-severity-tag.tag-high { color: var(--saffron); }
+  .sector-bp-card .sector-stat {
+    padding: 0 28px 14px;
+    border-bottom: 1px solid var(--aged);
+  }
   .sector-stat {
     font-size: 10px;
     color: var(--rust);
@@ -1481,7 +1349,6 @@
     .channel-col { border-right: none; border-bottom: 1px solid var(--ink); }
     .feature-row { grid-template-columns: 1fr; }
     .feature-side { border-top: 2px solid var(--ink); }
-    .solutions-row { grid-template-columns: 1fr 1fr; }
     .stats-bar { flex-wrap: wrap; }
     .stat-item { min-width: 50%; }
     .hero { padding: 40px 20px 30px; }
@@ -1512,8 +1379,6 @@
     .plan-items { grid-template-columns: 1fr; }
     .plan-item-wide { grid-column: 1; }
     .plan-principle { padding: 40px 20px; }
-    .sectors-header { padding: 40px 20px 30px; }
-    .sectors-grid { grid-template-columns: 1fr; }
     .watchdogs-row { padding: 40px 20px; }
     .watchdogs-grid { grid-template-columns: 1fr 1fr; }
     .watchdog-card:nth-child(3n) { border-right: 1px solid rgba(245,239,224,0.1); }
@@ -1535,11 +1400,6 @@
     .lp-num { display: none; }
     .lp-body { padding-left: 0; }
     .lp-cols { grid-template-columns: 1fr; gap: 24px; }
-    .blueprint-row { padding: 40px 20px; }
-    .blueprint-pillars { grid-template-columns: 1fr; gap: 0; }
-    .pillar { border-bottom: 1px solid rgba(245,239,224,0.1); padding-bottom: 24px; margin-bottom: 24px; }
-    .pillar:last-child { border-bottom: none; margin-bottom: 0; }
-    .blueprint-diagram { font-size: 9px; padding: 16px 20px; }
   }
 </style>
 </head>
@@ -1561,15 +1421,12 @@
     <a href="#channels">Channels</a>
     <a href="#deep-dive">Deep Dive</a>
     <a href="#cases">Cases</a>
-    <a href="#solutions">Solutions</a>
     <a href="#plain-fixes">Plain Fixes</a>
     <a href="#sectors">Sectors</a>
-    <a href="#sector-blueprint">Sector Fixes</a>
     <a href="#watchdogs">Watchdogs</a>
     <a href="#watchdog-system">System</a>
     <a href="#toolkit">Toolkit</a>
     <a href="#loopholes">Loopholes</a>
-    <a href="#blueprint">Blueprint</a>
     <a href="#radical-plan">The Plan</a>
     <a href="#voices">Voices</a>
   </div>
@@ -1872,90 +1729,12 @@
   </div>
 </section>
 
-<!-- SOLUTIONS -->
-<div class="solutions-row reveal" id="solutions">
-  <div class="sol-card">
-    <span class="sol-icon" role="img" aria-label="Magnifying glass">🔍</span>
-    <h3>Public Procurement Transparency</h3>
-    <p>Real-time public ledger for all contracts above ₹1 Cr. Mandatory disclosure of beneficial ownership of winning bidders. Tools like GeFM and PFMS need full public read access, not just government visibility.</p>
-  </div>
-  <div class="sol-card">
-    <span class="sol-icon" role="img" aria-label="Shield">🛡️</span>
-    <h3>Whistleblower Protection</h3>
-    <p>India's Whistle Blowers Protection Act (2014) was never notified into force as of 2024. Passing and enforcing it is foundational. Without credible protection, insiders will never come forward.</p>
-  </div>
-  <div class="sol-card">
-    <span class="sol-icon" role="img" aria-label="Recycling arrows">🔄</span>
-    <h3>Cooling-Off Laws</h3>
-    <p>A mandatory 5-year bar on bureaucrats and ministers joining industries they regulated. Currently India has a 2-year bar for select IAS officers — widely seen as unenforceable and inadequate.</p>
-  </div>
-  <div class="sol-card">
-    <span class="sol-icon" role="img" aria-label="Scales of justice">⚖️</span>
-    <h3>An Empowered Lokpal</h3>
-    <p>The Lokpal and Lokayuktas Act (2013) exists but the body remained effectively non-functional for years. A Lokpal with genuine prosecutorial independence and budget autonomy is a structural necessity.</p>
-  </div>
-</div>
-
-<!-- SECTOR BREAKDOWN -->
-<section class="sectors-section reveal" id="sectors">
-  <div class="sectors-header">
-    <div class="section-tag">By Sector</div>
-    <h2>Where Corruption <em>Hits Hardest</em></h2>
-    <p>Corruption is not uniform. Certain sectors are systematically more vulnerable due to high citizen dependency, low accountability, and information asymmetry. Data from Transparency International India and survey research identifies these six as the most corrupt-affected.</p>
-  </div>
-  <div class="sectors-grid">
-
-    <div class="sector-card">
-      <div class="sector-rank"><span class="sector-rank-dot dot-critical"></span> Most Corrupt Sector</div>
-      <h3>Police &amp; Law Enforcement</h3>
-      <p>Police consistently rank as the most corrupt institution in citizen surveys. Bribes for FIRs, bail, and case settlement are routine. Citizens face extortion in traffic stops, raids, and custody situations.</p>
-      <div class="sector-stat">Ranked #1 corrupt institution — Transparency International India survey</div>
-    </div>
-
-    <div class="sector-card">
-      <div class="sector-rank"><span class="sector-rank-dot dot-critical"></span> Second Most Corrupt</div>
-      <h3>Healthcare &amp; Public Hospitals</h3>
-      <p>Bribes paid for hospital admissions, government doctors' "private" consultations, medicine theft from public stock, and preferential treatment in government medical colleges. Poorest patients bear the highest burden.</p>
-      <div class="sector-stat">25% of citizens paid a bribe for health services — Transparency International, 2024</div>
-    </div>
-
-    <div class="sector-card">
-      <div class="sector-rank"><span class="sector-rank-dot dot-critical"></span> Largest Black Money Sink</div>
-      <h3>Land &amp; Property Registration</h3>
-      <p>Cash transactions disguised through circle rate manipulation, sub-registrar bribes for expedited registration, mutation fraud, and benami property — all concentrated at the district and sub-district level where oversight is minimal.</p>
-      <div class="sector-stat">Real estate largest sector for undisclosed wealth — CAG/ED reports</div>
-    </div>
-
-    <div class="sector-card">
-      <div class="sector-rank"><span class="sector-rank-dot dot-high"></span> Systemic Fraud</div>
-      <h3>Education &amp; Admissions</h3>
-      <p>Seat selling in medical, engineering, and government colleges. Exam paper leaks at scale (Vyapam affected over 13 exams in MP). Fake degrees. Teacher recruitment fraud in state-level appointments.</p>
-      <div class="sector-stat">Vyapam implicated 2,500+ people across 13 state exams — CBI records</div>
-    </div>
-
-    <div class="sector-card">
-      <div class="sector-rank"><span class="sector-rank-dot dot-high"></span> Last-Mile Leakage</div>
-      <h3>Public Utilities &amp; Services</h3>
-      <p>Electricity meter tampering by officials, bribes for ration card issuance, water connection approvals, driving licence irregularities. IPaidABribe.com documents 47,000+ such transactions across 630+ cities.</p>
-      <div class="sector-stat">47,000+ reported bribe transactions for basic services — IPaidABribe.com</div>
-    </div>
-
-    <div class="sector-card">
-      <div class="sector-rank"><span class="sector-rank-dot dot-high"></span> Structural Leverage</div>
-      <h3>Judiciary &amp; Legal System</h3>
-      <p>Not judicial corruption per se, but adjournment culture used as leverage. Lawyers and fixers monetise case delays. Lower courts have documented issues with clerks accepting money for "priority" processing of cases.</p>
-      <div class="sector-stat">50M+ pending cases create chronic leverage for delay-based extortion — NJDG data</div>
-    </div>
-
-  </div>
-</section>
-
-<!-- SECTOR BLUEPRINT -->
-<section class="sector-bp-section reveal" id="sector-blueprint">
+<!-- SECTORS: PROBLEM + FIX -->
+<section class="sector-bp-section reveal" id="sectors">
   <div class="sector-bp-header">
-    <div class="section-tag">Tech-Driven Reform</div>
-    <h2>The Sector-by-Sector <em>Fix</em></h2>
-    <p>Six sectors. Six specific mechanisms. Each one eliminates human discretion at the exact point where corruption enters — not policy pledges, but structural rewiring.</p>
+    <div class="section-tag">Sector Analysis</div>
+    <h2>Where It Hits — and <em>How to Stop It</em></h2>
+    <p>Six sectors ranked by corruption severity. For each: the specific problem, the data behind it, and the exact mechanism that closes the loophole — not moral appeals, but structural rewiring.</p>
   </div>
   <div class="sector-bp-grid">
 
@@ -1966,6 +1745,11 @@
         <span class="sector-bp-num">Sector 01</span>
       </div>
       <h3>Police &amp; Law Enforcement</h3>
+      <div class="sector-bp-severity">
+        <span class="sector-rank-dot dot-critical"></span>
+        <span class="sector-severity-tag tag-critical">Most Corrupt Sector</span>
+      </div>
+      <div class="sector-stat">Ranked #1 corrupt institution — Transparency International India survey</div>
       <div class="pf-pair">
         <div class="pf-left">
           <span class="pf-label pf-prob-label">Problem</span>
@@ -1999,6 +1783,11 @@
         <span class="sector-bp-num">Sector 02</span>
       </div>
       <h3>Healthcare &amp; Public Hospitals</h3>
+      <div class="sector-bp-severity">
+        <span class="sector-rank-dot dot-critical"></span>
+        <span class="sector-severity-tag tag-critical">Second Most Corrupt</span>
+      </div>
+      <div class="sector-stat">25% of citizens paid a bribe for health services — Transparency International, 2024</div>
       <div class="pf-pair">
         <div class="pf-left">
           <span class="pf-label pf-prob-label">Problem</span>
@@ -2032,6 +1821,11 @@
         <span class="sector-bp-num">Sector 03</span>
       </div>
       <h3>Land Registration &amp; Property</h3>
+      <div class="sector-bp-severity">
+        <span class="sector-rank-dot dot-critical"></span>
+        <span class="sector-severity-tag tag-critical">Largest Black Money Sink</span>
+      </div>
+      <div class="sector-stat">Real estate largest sector for undisclosed wealth — CAG/ED reports</div>
       <div class="pf-pair">
         <div class="pf-left">
           <span class="pf-label pf-prob-label">Problem</span>
@@ -2053,6 +1847,11 @@
         <span class="sector-bp-num">Sector 04</span>
       </div>
       <h3>Education &amp; Admissions</h3>
+      <div class="sector-bp-severity">
+        <span class="sector-rank-dot dot-high"></span>
+        <span class="sector-severity-tag tag-high">Systemic Fraud</span>
+      </div>
+      <div class="sector-stat">Vyapam implicated 2,500+ people across 13 state exams — CBI records</div>
       <div class="pf-pair">
         <div class="pf-left">
           <span class="pf-label pf-prob-label">Problem</span>
@@ -2074,6 +1873,11 @@
         <span class="sector-bp-num">Sector 05</span>
       </div>
       <h3>Public Utilities &amp; Services</h3>
+      <div class="sector-bp-severity">
+        <span class="sector-rank-dot dot-high"></span>
+        <span class="sector-severity-tag tag-high">Last-Mile Leakage</span>
+      </div>
+      <div class="sector-stat">47,000+ reported bribe transactions for basic services — IPaidABribe.com</div>
       <div class="pf-pair">
         <div class="pf-left">
           <span class="pf-label pf-prob-label">Problem</span>
@@ -2095,6 +1899,11 @@
         <span class="sector-bp-num">Sector 06</span>
       </div>
       <h3>Judiciary &amp; Legal System</h3>
+      <div class="sector-bp-severity">
+        <span class="sector-rank-dot dot-high"></span>
+        <span class="sector-severity-tag tag-high">Structural Leverage</span>
+      </div>
+      <div class="sector-stat">50M+ pending cases create chronic leverage for delay-based extortion — NJDG data</div>
       <div class="pf-pair">
         <div class="pf-left">
           <span class="pf-label pf-prob-label">Problem</span>
@@ -2416,40 +2225,6 @@
   </div>
 </section>
 
-<!-- STRUCTURAL BLUEPRINT -->
-<div class="blueprint-row reveal" id="blueprint">
-  <span class="blueprint-tag">Structural Blueprint</span>
-  <h2>The Ultimate Structural Blueprint</h2>
-  <p class="blueprint-intro">True reform does not rely on changing human nature; it relies on building a system where transparency is the default path of least resistance.</p>
-  <pre class="blueprint-diagram">┌────────────────────────────────────────────────────────┐
-│             THE TRADITIONAL LOOPHOLE SYSTEM            │
-│  Manual Filings ➔ High Bureaucratic Contact ➔ Delays   │
-└───────────────────────────┬────────────────────────────┘
-                            │  [The Structural Pivot]
-                            ▼
-┌────────────────────────────────────────────────────────┐
-│             THE TRANSPARENT COMPLIANCE SYSTEM          │
-│  Faceless Portals ➔ Algorithmic Audits ➔ Swift Courts  │
-└────────────────────────────────────────────────────────┘</pre>
-  <div class="blueprint-pillars">
-    <div class="pillar">
-      <span class="pillar-label">Pillar One</span>
-      <h4>Faceless Digital Administration</h4>
-      <p>Remove human discretion from routine processes. Automate approvals, anonymize officer assignments, mandate digital timelines with legal consequences for delay.</p>
-    </div>
-    <div class="pillar">
-      <span class="pillar-label">Pillar Two</span>
-      <h4>Stringent Procurement Monitoring</h4>
-      <p>Deploy algorithmic audits across all public tenders. Mandate open-contracting portals for full public visibility into every rupee of public expenditure.</p>
-    </div>
-    <div class="pillar">
-      <span class="pillar-label">Pillar Three</span>
-      <h4>Fast-tracked Judicial Timelines</h4>
-      <p>Dedicated financial crime courts with 12–18 month verdict mandates. Forensic accounting capacity embedded in investigative agencies from the point of arrest.</p>
-    </div>
-  </div>
-</div>
-
 <!-- RADICAL PLAN -->
 <section class="radical-plan-section reveal" id="radical-plan">
 
@@ -2682,7 +2457,7 @@
 
   // Active nav section highlight
   const navLinks = document.querySelectorAll('.site-nav a');
-  const sectionIds = ['stats', 'channels', 'deep-dive', 'cases', 'solutions', 'plain-fixes', 'sectors', 'sector-blueprint', 'watchdogs', 'watchdog-system', 'toolkit', 'loopholes', 'blueprint', 'radical-plan', 'voices'];
+  const sectionIds = ['stats', 'channels', 'deep-dive', 'cases', 'plain-fixes', 'sectors', 'watchdogs', 'watchdog-system', 'toolkit', 'loopholes', 'radical-plan', 'voices'];
   const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
 
   const navObserver = new IntersectionObserver((entries) => {
