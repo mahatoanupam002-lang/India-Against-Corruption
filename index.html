@@ -723,6 +723,155 @@
     margin-bottom: 16px;
   }
 
+  /* ── VOICES SECTION ── */
+  .voices-section { border-bottom: 2px solid var(--ink); }
+  .voices-header {
+    padding: 50px 40px 40px;
+    border-bottom: 1px solid var(--aged);
+    max-width: 860px;
+  }
+  .voices-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .voices-header h2 em { color: var(--rust); }
+  .voices-header p { font-size: 12px; line-height: 1.9; color: var(--ash); }
+
+  .voice-hero {
+    background: var(--dark);
+    color: var(--paper);
+    padding: 56px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .voice-hero::before {
+    content: '❝';
+    position: absolute;
+    font-size: 320px;
+    opacity: 0.04;
+    top: -50px;
+    left: 16px;
+    font-family: 'Playfair Display', serif;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .voice-hero-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 2.5vw, 28px);
+    font-style: italic;
+    line-height: 1.65;
+    color: var(--paper);
+    max-width: 900px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 24px;
+  }
+  .voice-hero-text em { color: var(--saffron); font-style: normal; }
+  .voice-hero-cite {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(245,239,224,0.45);
+    position: relative;
+    z-index: 1;
+  }
+
+  .voices-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid var(--ink);
+    border-left: 1px solid var(--ink);
+  }
+  .voice-card {
+    padding: 36px 32px;
+    border-right: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    transition: background 0.3s;
+  }
+  .voice-card:hover { background: var(--aged); }
+  .voice-card-tag {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ash);
+    margin-bottom: 14px;
+  }
+  .voice-card-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    line-height: 1.85;
+    color: var(--ink);
+    font-style: italic;
+    margin-bottom: 16px;
+  }
+  .voice-card-text em { color: var(--rust); font-style: normal; }
+  .voice-card-cite {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--saffron);
+  }
+
+  .voice-monologue {
+    padding: 50px 40px;
+    border-top: 2px solid var(--ink);
+    background: var(--aged);
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .voice-monologue-meta .section-tag { margin-bottom: 14px; }
+  .voice-monologue-meta p { font-size: 10px; line-height: 1.8; color: var(--ash); }
+  .voice-monologue-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--dark);
+    font-style: italic;
+  }
+  .voice-monologue-text em {
+    font-style: normal;
+    background: var(--rust);
+    color: white;
+    padding: 1px 6px;
+  }
+  .voice-monologue-cite {
+    display: block;
+    margin-top: 20px;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ash);
+    font-style: normal;
+  }
+
+  .voice-closing {
+    padding: 56px 40px;
+    text-align: center;
+    border-top: 2px solid var(--ink);
+  }
+  .voice-closing-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3vw, 40px);
+    font-style: italic;
+    line-height: 1.35;
+    color: var(--dark);
+    max-width: 640px;
+    margin: 0 auto 20px;
+  }
+  .voice-closing-text span { color: var(--rust); }
+  .voice-closing-cite {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ash);
+  }
+
   /* ── REDUCED MOTION ── */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
@@ -751,6 +900,13 @@
     footer { flex-direction: column; gap: 12px; text-align: center; }
     table { min-width: 600px; }
     .back-to-top { bottom: 20px; right: 20px; }
+    .voice-monologue { grid-template-columns: 1fr; gap: 20px; }
+    .voices-grid { grid-template-columns: 1fr; }
+    .voice-card { border-right: 1px solid var(--ink); }
+    .voices-header { padding: 40px 20px 30px; }
+    .voice-hero { padding: 40px 20px; }
+    .voice-monologue { padding: 40px 20px; }
+    .voice-closing { padding: 40px 20px; }
     .loopholes-section { padding: 40px 20px 0; }
     .loophole-card { grid-template-columns: 1fr; padding: 32px 0; }
     .lp-num { display: none; }
@@ -785,6 +941,7 @@
     <a href="#solutions">Solutions</a>
     <a href="#loopholes">Loopholes</a>
     <a href="#blueprint">Blueprint</a>
+    <a href="#voices">Voices</a>
   </div>
 </nav>
 
@@ -1117,6 +1274,78 @@
   </div>
 </div>
 
+<!-- VOICES -->
+<section class="voices-section" id="voices">
+
+  <div class="voices-header reveal">
+    <div class="section-tag">Cultural Mirror</div>
+    <h2>The <em>Voices</em> That Speak the Truth</h2>
+    <p>TVF's <em>Sapne Vs Everyone</em> holds up a mirror to the systems this report documents — the same moral compromises, the same structures of power, the same silent erosion of middle-class aspiration. Art does not merely reflect reality. Sometimes it names it better than any audit report can.</p>
+  </div>
+
+  <!-- HERO QUOTE -->
+  <blockquote class="voice-hero reveal">
+    <p class="voice-hero-text">
+      "Duniya do tarah ke logon se chalti hai — <em>ek wo jo niyam banate hain,</em> aur doosre wo jo niyam mante hain. Agar niyam manne walon ki qatar mein khade rahoge, toh poori zindagi sirf dhakke khaoge. Niyam badalne ke liye pehle us kursi par baithna padta hai jahan se niyam likhe jaate hain."
+    </p>
+    <footer class="voice-hero-cite">— Jimmy · Sapne Vs Everyone (TVF)</footer>
+  </blockquote>
+
+  <!-- QUOTE GRID -->
+  <div class="voices-grid reveal">
+
+    <blockquote class="voice-card">
+      <span class="voice-card-tag">On Moral Compromise</span>
+      <p class="voice-card-text">"Ye jo sach, imandari, aur asoolon ki baatein karte hain na… ye wahi log hote hain jinki zameer ko kabhi bade paise ne lalkara nahi hota. <em>Jab samne itna paisa ho na jo tumhari saat pushton ki kismat badal sake,</em> tab saare asool dharre ke dharre reh jaate hain."</p>
+      <cite class="voice-card-cite">— Jimmy</cite>
+    </blockquote>
+
+    <blockquote class="voice-card">
+      <span class="voice-card-tag">On Shrinking Ambition</span>
+      <p class="voice-card-text">"Sapne toh sabke bade hote hain yaar, par bade hote-hote un sapnon ka size chhota hone lagta hai. Pehle insaan ko duniya badalni hoti hai, phir desh, phir apna sheher… aur aakhiri mein aate-aate <em>baat sirf is baat pe ruk jaati hai ki mahine ke aakhiri mein rent time pe nikal jaaye."</em></p>
+      <cite class="voice-card-cite">— Sapne Vs Everyone</cite>
+    </blockquote>
+
+    <blockquote class="voice-card">
+      <span class="voice-card-tag">On Middle-Class Stakes</span>
+      <p class="voice-card-text">"Middle-class ladke ke paas na fail hone ka luxury nahi hota. Agar tum jeet gaye toh tum misaal ho, aur agar tum haar gaye… <em>toh tum bas ek aur bewaqoof ho jisne waqt aur paisa dono barbaad kiya.</em> Yahan koi tumhare 'effort' ke taali nahi bajata, sabko sirf result dekhna hai."</p>
+      <cite class="voice-card-cite">— Sapne Vs Everyone</cite>
+    </blockquote>
+
+    <blockquote class="voice-card">
+      <span class="voice-card-tag">On Fighting the System</span>
+      <p class="voice-card-text">"Tum akele is pure system se nahi lad sakte. Yeh system ek daldal hai, tum jitna pair maaroge, <em>utna hi andar dhaste jaoge.</em> Isse accha hai ki behna seekho, ya phir kinare ho jao."</p>
+      <cite class="voice-card-cite">— Sapne Vs Everyone</cite>
+    </blockquote>
+
+  </div>
+
+  <!-- PRASHANT'S HERO MONOLOGUE -->
+  <blockquote class="voice-monologue reveal">
+    <div class="voice-monologue-meta">
+      <div class="section-tag">Monologue</div>
+      <p>Prashant redefines the real hero — not someone fearless of the world, but someone terrified only of surrendering their own dream.</p>
+    </div>
+    <div>
+      <p class="voice-monologue-text">
+        "Mujhe nahi aate judo-karate, mujhe nahi aati tez-taraar baatein. Par galat hota main dekh nahi paata aur pata ho sach, toh jhooth keh nahi paata. Yeh kaun hai? Yeh hai Hero.
+        <br><br>
+        Darr mujhe marne ka bhi nahi, zinda aakhir bachta kaun hai yaar?
+        <br><br>
+        Darr mujhe is baat ka hai… ki kahin thak ke, darr ke, aasaan ya aaraam ka khayaal rakh ke, ya mann mein bechaara ban ke, kisi ki kaamyabi se jalan khaake… <em>maan na jaau main apne sapnon se haar.</em> Yeh kaun hai? Yeh hai Hero."
+      </p>
+      <cite class="voice-monologue-cite">— Prashant (Paramvir Cheema) · Sapne Vs Everyone</cite>
+    </div>
+  </blockquote>
+
+  <!-- CLOSING -->
+  <div class="voice-closing reveal">
+    <p class="voice-closing-text">"Kahani tumhari hai. Ho sake toh <span>kamaal</span> likhna."</p>
+    <p class="voice-closing-cite">— Sapne Vs Everyone · TVF</p>
+  </div>
+
+</section>
+
 <!-- FOOTER -->
 <footer>
   <p>All statistics flagged where approximate. Verify via CAG reports, Transparency International, and SC judgments.</p>
@@ -1149,7 +1378,7 @@
 
   // Active nav section highlight
   const navLinks = document.querySelectorAll('.site-nav a');
-  const sectionIds = ['stats', 'channels', 'deep-dive', 'cases', 'solutions', 'loopholes', 'blueprint'];
+  const sectionIds = ['stats', 'channels', 'deep-dive', 'cases', 'solutions', 'loopholes', 'blueprint', 'voices'];
   const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
 
   const navObserver = new IntersectionObserver((entries) => {
