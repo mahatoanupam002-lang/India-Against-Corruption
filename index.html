@@ -1118,6 +1118,113 @@
     font-style: italic;
   }
 
+  /* ── RADICAL PLAN SECTION ── */
+  .radical-plan-section { border-bottom: 2px solid var(--ink); }
+  .plan-header {
+    padding: 50px 40px 40px;
+    border-bottom: 1px solid var(--aged);
+  }
+  .plan-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 46px);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 16px;
+  }
+  .plan-header h2 em { color: var(--rust); }
+  .plan-header > p { font-size: 12px; line-height: 1.9; color: var(--ash); max-width: 720px; }
+  .plan-pillar { border-bottom: 1px solid var(--ink); }
+  .plan-pillar:last-of-type { border-bottom: none; }
+  .pillar-header-row {
+    padding: 28px 40px;
+    background: var(--aged);
+    border-bottom: 1px solid var(--ink);
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    align-items: center;
+    gap: 20px;
+  }
+  .pillar-big-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    font-weight: 900;
+    color: var(--ink);
+    opacity: 0.1;
+    line-height: 1;
+  }
+  .pillar-title-text small {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ash);
+    margin-bottom: 6px;
+  }
+  .pillar-title-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1.2;
+  }
+  .plan-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-left: 1px solid var(--ink);
+  }
+  .plan-item {
+    padding: 32px;
+    border-right: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    transition: background 0.3s;
+  }
+  .plan-item:hover { background: rgba(230,126,34,0.04); }
+  .plan-item-wide { grid-column: 1 / -1; }
+  .plan-item h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .plan-item p { font-size: 11px; line-height: 1.9; color: var(--ash); margin-bottom: 8px; }
+  .plan-item ul { list-style: none; padding: 0; margin-top: 8px; }
+  .plan-item ul li {
+    font-size: 11px;
+    line-height: 1.9;
+    color: var(--ash);
+    padding-left: 18px;
+    position: relative;
+    margin-bottom: 3px;
+  }
+  .plan-item ul li::before { content: '→'; position: absolute; left: 0; color: var(--saffron); }
+  .plan-principle {
+    padding: 60px 40px;
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    border-top: 2px solid var(--ink);
+  }
+  .plan-principle-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 2.5vw, 30px);
+    font-style: italic;
+    line-height: 1.55;
+    max-width: 820px;
+    margin: 0 auto 20px;
+    color: var(--paper);
+    position: relative;
+    z-index: 1;
+  }
+  .plan-principle-text em { color: var(--saffron); font-style: normal; }
+  .plan-principle-attr {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(245,239,224,0.35);
+  }
+
   /* ── REDUCED MOTION ── */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
@@ -1146,6 +1253,12 @@
     footer { flex-direction: column; gap: 12px; text-align: center; }
     table { min-width: 600px; }
     .back-to-top { bottom: 20px; right: 20px; }
+    .plan-header { padding: 40px 20px 30px; }
+    .pillar-header-row { grid-template-columns: 1fr; gap: 4px; padding: 24px 20px; }
+    .pillar-big-num { display: none; }
+    .plan-items { grid-template-columns: 1fr; }
+    .plan-item-wide { grid-column: 1; }
+    .plan-principle { padding: 40px 20px; }
     .sectors-header { padding: 40px 20px 30px; }
     .sectors-grid { grid-template-columns: 1fr; }
     .watchdogs-row { padding: 40px 20px; }
@@ -1201,6 +1314,7 @@
     <a href="#toolkit">Toolkit</a>
     <a href="#loopholes">Loopholes</a>
     <a href="#blueprint">Blueprint</a>
+    <a href="#radical-plan">The Plan</a>
     <a href="#voices">Voices</a>
   </div>
 </nav>
@@ -1761,6 +1875,134 @@
   </div>
 </div>
 
+<!-- RADICAL PLAN -->
+<section class="radical-plan-section reveal" id="radical-plan">
+
+  <div class="plan-header">
+    <div class="section-tag">The Radical Plan</div>
+    <h2>Beyond Incremental Reform:<br><em>A Blueprint for Transformation</em></h2>
+    <p>True change fails when it relies on the benevolence of leaders. This blueprint operates on a structural premise: change the rules of the game, change the incentives, and you change the behavior of the players. Three pillars — Politicians, Institutions, Citizens — each requiring structural overhaul, not cosmetic fixes.</p>
+  </div>
+
+  <!-- PILLAR 1: POLITICIANS -->
+  <div class="plan-pillar reveal">
+    <div class="pillar-header-row">
+      <div class="pillar-big-num" aria-hidden="true">01</div>
+      <div class="pillar-title-text">
+        <small>First Pillar</small>
+        <h3>Transforming Politicians: From Rulers to Public Servants</h3>
+      </div>
+    </div>
+    <div class="plan-items">
+
+      <div class="plan-item">
+        <h4>The "Skin in the Game" Mandate</h4>
+        <p>All elected officials and their immediate families must exclusively use public services. Their children attend state-run schools. They receive medical treatment only at public hospitals. If the infrastructure isn't good enough for them, they are incentivised to fix it.</p>
+      </div>
+
+      <div class="plan-item">
+        <h4>Total Financial Decoupling</h4>
+        <p>Sever all private money from politics entirely:</p>
+        <ul>
+          <li>Ban all corporate, private, and anonymous electoral bond donations</li>
+          <li>Move to 100% state-funded elections via per-vote-received subsidy from the previous election</li>
+          <li>Place all political parties under RTI with real-time, blockchain-verified expenditure ledgers</li>
+        </ul>
+      </div>
+
+      <div class="plan-item">
+        <h4>National Academy of Governance</h4>
+        <p>Establish a mandatory, independent governance school. Before contesting any state or national election, candidates must pass a rigorous, non-partisan course covering constitutional law, public economics, and data-driven policymaking. Elected officials are not born knowing how to govern — they should be required to learn.</p>
+      </div>
+
+      <div class="plan-item">
+        <h4>Immediate Disqualification</h4>
+        <p>A fast-track judicial process that automatically suspends any elected representative within 90 days of a court framing heinous criminal charges against them — bypassing the decade-long trial delays that currently allow accused politicians to continue in office.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PILLAR 2: INSTITUTIONS -->
+  <div class="plan-pillar reveal">
+    <div class="pillar-header-row">
+      <div class="pillar-big-num" aria-hidden="true">02</div>
+      <div class="pillar-title-text">
+        <small>Second Pillar</small>
+        <h3>Re-engineering Institutions: Total Autonomy &amp; Efficiency</h3>
+      </div>
+    </div>
+    <div class="plan-items">
+
+      <div class="plan-item">
+        <h4>A Fourth Branch of Governance</h4>
+        <p>Elevate the CBI, ED, RBI, and Election Commission into a constitutionally independent Fourth Branch — completely decoupled from executive control:</p>
+        <ul>
+          <li>Chiefs selected by a bipartisan panel: PM + Leader of Opposition + Chief Justice</li>
+          <li>Fixed, non-renewable 5-year terms — no fear of transfer, no hope of extension</li>
+          <li>Independent budgetary allocations direct from the Consolidated Fund of India, free from ministerial control</li>
+        </ul>
+      </div>
+
+      <div class="plan-item">
+        <h4>Judicial Overhaul &amp; 24/7 Courts</h4>
+        <p>Two structural changes to end the justice backlog:</p>
+        <ul>
+          <li><strong>Transparent appointments</strong> — a merit-based NJAC scoring system replacing the insular collegium</li>
+          <li><strong>Double-shift, round-the-clock courts</strong> for commercial, administrative, and minor criminal disputes — clearing the 40M+ case backlog within 3 years</li>
+        </ul>
+      </div>
+
+      <div class="plan-item plan-item-wide">
+        <h4>Decentralised Fiscal Federalism</h4>
+        <p>Bypass state-level political bottlenecks by legally routing 50% of all GST and direct tax collections straight to the third tier of government — Municipal Corporations and Village Panchayats — with the legal authority to design their own micro-budgets. Money closest to the problem should be controlled by those closest to the problem.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PILLAR 3: CITIZENS -->
+  <div class="plan-pillar reveal">
+    <div class="pillar-header-row">
+      <div class="pillar-big-num" aria-hidden="true">03</div>
+      <div class="pillar-title-text">
+        <small>Third Pillar</small>
+        <h3>Awakening Citizens: From Passive Subjects to Active Shareholders</h3>
+      </div>
+    </div>
+    <div class="plan-items">
+
+      <div class="plan-item">
+        <h4>Civic Right-to-Recall Platform</h4>
+        <p>A secure digital voting infrastructure linked to digital IDs. If a representative fails their manifesto metrics or faces widespread disapproval, a verified petition by 30% of registered voters in a constituency triggers a mandatory recall referendum. Accountability does not end on election day.</p>
+      </div>
+
+      <div class="plan-item">
+        <h4>The "Civic Dividend" Tax Rebate</h4>
+        <p>Tie a portion of tax structures directly to civic participation. Citizens who actively participate in local ward committees, fulfill jury duties, or log civic infrastructure failures through a national app receive direct, tangible tax rebates. Participation pays; apathy costs.</p>
+      </div>
+
+      <div class="plan-item">
+        <h4>Radical Curriculum Overhaul: Action Civics</h4>
+        <p>Replace passive rote learning with mandatory hands-on "Action Civics" from Grade 6 onwards. Students should not just memorise the Constitution — they must audit a local government office, analyse a municipal budget, and draft mock PILs as graduation requirements.</p>
+      </div>
+
+      <div class="plan-item">
+        <h4>Decentralised Public Media</h4>
+        <p>Dismantle state-controlled broadcasting and heavily subsidised corporate media ecosystems. Create a robust, crowd-funded, citizen-governed public broadcasting trust — modelled after the BBC but insulated via a mandatory civic levy — ensuring media acts as a public watchdog, not a political megaphone.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CLOSING PRINCIPLE -->
+  <div class="plan-principle">
+    <p class="plan-principle-text">"Transformative change fails when it relies on the benevolence of leaders. This plan operates on a structural premise: <em>change the rules of the game, change the incentives,</em> and you change the behavior of the players."</p>
+    <p class="plan-principle-attr">— The Radical Plan · A Blueprint for Transformation</p>
+  </div>
+
+</section>
+
 <!-- VOICES -->
 <section class="voices-section" id="voices">
 
@@ -1865,7 +2107,7 @@
 
   // Active nav section highlight
   const navLinks = document.querySelectorAll('.site-nav a');
-  const sectionIds = ['stats', 'channels', 'deep-dive', 'cases', 'solutions', 'sectors', 'watchdogs', 'toolkit', 'loopholes', 'blueprint', 'voices'];
+  const sectionIds = ['stats', 'channels', 'deep-dive', 'cases', 'solutions', 'sectors', 'watchdogs', 'toolkit', 'loopholes', 'blueprint', 'radical-plan', 'voices'];
   const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
 
   const navObserver = new IntersectionObserver((entries) => {
