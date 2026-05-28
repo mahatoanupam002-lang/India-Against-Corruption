@@ -132,6 +132,64 @@
   .site-nav a:hover { color: var(--rust); background: rgba(192,57,43,0.06); }
   .site-nav a[aria-current] { color: var(--rust); border-bottom: 2px solid var(--rust); }
 
+  /* ── NAV DROPDOWNS ── */
+  .nav-group {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+  }
+  .nav-group-btn {
+    background: none;
+    border: none;
+    border-right: 1px solid rgba(26,18,9,0.15);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ash);
+    cursor: pointer;
+    padding: 10px 18px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    transition: color 0.2s, background 0.2s;
+  }
+  .nav-group-btn:hover,
+  .nav-group-btn.active { color: var(--rust); background: rgba(192,57,43,0.06); }
+  .nav-group-btn.active { border-bottom: 2px solid var(--rust); }
+  .nav-arrow {
+    font-size: 7px;
+    line-height: 1;
+    transition: transform 0.18s;
+    display: inline-block;
+  }
+  .nav-group-btn[aria-expanded="true"] .nav-arrow { transform: rotate(180deg); }
+  .nav-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 170px;
+    background: var(--aged);
+    border: 1px solid var(--ink);
+    border-top: 2px solid var(--rust);
+    z-index: 400;
+    box-shadow: 3px 3px 0 rgba(26,18,9,0.12);
+  }
+  .nav-group:hover .nav-dropdown,
+  .nav-dropdown.open { display: block; }
+  .nav-dropdown a {
+    display: block;
+    padding: 9px 16px;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(26,18,9,0.1);
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+  .nav-dropdown a:last-child { border-bottom: none; }
+  .nav-dropdown a[aria-current] { border-bottom-width: 1px; border-left: 2px solid var(--rust); }
+
   /* ── HERO ── */
   .hero {
     padding: 60px 40px 40px;
@@ -1356,6 +1414,8 @@
     .masthead { padding: 12px 20px; }
     .masthead-center { display: none; }
     .site-nav { padding: 0 20px; }
+    .nav-dropdown { min-width: 140px; }
+    .nav-group-btn { padding: 10px 12px; }
     footer { flex-direction: column; gap: 12px; text-align: center; }
     table { min-width: 600px; }
     .back-to-top { bottom: 20px; right: 20px; }
@@ -1417,18 +1477,44 @@
 <!-- STICKY NAV -->
 <nav class="site-nav" aria-label="Page sections">
   <div class="site-nav-inner">
-    <a href="#stats">Key Stats</a>
-    <a href="#channels">Channels</a>
-    <a href="#deep-dive">Deep Dive</a>
-    <a href="#cases">Cases</a>
-    <a href="#plain-fixes">Plain Fixes</a>
-    <a href="#sectors">Sectors</a>
-    <a href="#watchdogs">Watchdogs</a>
-    <a href="#watchdog-system">System</a>
-    <a href="#toolkit">Toolkit</a>
-    <a href="#loopholes">Loopholes</a>
-    <a href="#radical-plan">The Plan</a>
+
+    <div class="nav-group">
+      <button class="nav-group-btn" aria-haspopup="true" aria-expanded="false">
+        The Problem <span class="nav-arrow" aria-hidden="true">▾</span>
+      </button>
+      <div class="nav-dropdown" role="menu">
+        <a href="#stats" role="menuitem">Key Stats</a>
+        <a href="#channels" role="menuitem">Channels</a>
+        <a href="#deep-dive" role="menuitem">Deep Dive</a>
+        <a href="#cases" role="menuitem">Cases</a>
+      </div>
+    </div>
+
+    <div class="nav-group">
+      <button class="nav-group-btn" aria-haspopup="true" aria-expanded="false">
+        The Fix <span class="nav-arrow" aria-hidden="true">▾</span>
+      </button>
+      <div class="nav-dropdown" role="menu">
+        <a href="#plain-fixes" role="menuitem">Plain Fixes</a>
+        <a href="#sectors" role="menuitem">Sectors</a>
+        <a href="#loopholes" role="menuitem">Loopholes</a>
+        <a href="#radical-plan" role="menuitem">The Plan</a>
+      </div>
+    </div>
+
+    <div class="nav-group">
+      <button class="nav-group-btn" aria-haspopup="true" aria-expanded="false">
+        Take Action <span class="nav-arrow" aria-hidden="true">▾</span>
+      </button>
+      <div class="nav-dropdown" role="menu">
+        <a href="#watchdogs" role="menuitem">Watchdogs</a>
+        <a href="#watchdog-system" role="menuitem">System</a>
+        <a href="#toolkit" role="menuitem">Toolkit</a>
+      </div>
+    </div>
+
     <a href="#voices">Voices</a>
+
   </div>
 </nav>
 
@@ -2466,11 +2552,56 @@
       if (!link) return;
       if (entry.isIntersecting) {
         navLinks.forEach(l => l.removeAttribute('aria-current'));
+        document.querySelectorAll('.nav-group-btn').forEach(b => b.classList.remove('active'));
         link.setAttribute('aria-current', 'true');
+        const parentBtn = link.closest('.nav-group')?.querySelector('.nav-group-btn');
+        if (parentBtn) parentBtn.classList.add('active');
       }
     });
   }, { threshold: 0.25, rootMargin: '-50px 0px -40% 0px' });
   sections.forEach(s => navObserver.observe(s));
+
+  // Dropdown keyboard/click handling
+  document.querySelectorAll('.nav-group-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      document.querySelectorAll('.nav-group-btn').forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling?.classList.remove('open');
+      });
+      if (!expanded) {
+        btn.setAttribute('aria-expanded', 'true');
+        btn.nextElementSibling?.classList.add('open');
+      }
+    });
+  });
+
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.nav-group')) {
+      document.querySelectorAll('.nav-group-btn').forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling?.classList.remove('open');
+      });
+    }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.nav-group-btn').forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling?.classList.remove('open');
+      });
+    }
+  });
+
+  document.querySelectorAll('.nav-dropdown a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelectorAll('.nav-group-btn').forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling?.classList.remove('open');
+      });
+    });
+  });
 </script>
 </body>
 </html>
