@@ -1225,6 +1225,93 @@
     color: rgba(245,239,224,0.35);
   }
 
+  /* ── PLAIN FIXES SECTION ── */
+  .plain-fixes-section { border-bottom: 2px solid var(--ink); }
+  .plain-fixes-header {
+    padding: 50px 40px 36px;
+    border-bottom: 1px solid var(--aged);
+  }
+  .plain-fixes-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 14px;
+  }
+  .plain-fixes-header h2 em { color: var(--rust); }
+  .plain-fixes-header p { font-size: 12px; line-height: 1.9; color: var(--ash); max-width: 640px; }
+  .plain-fix-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--ink);
+    border-left: 1px solid var(--ink);
+  }
+  .plain-fix-card {
+    border-right: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    display: flex;
+    flex-direction: column;
+  }
+  .plain-fix-card-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ash);
+    padding: 20px 28px 0;
+  }
+  .plain-fix-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark);
+    padding: 10px 28px 20px;
+    line-height: 1.2;
+    border-bottom: 1px solid var(--aged);
+  }
+  .plain-problem {
+    padding: 20px 28px;
+    background: rgba(192,57,43,0.05);
+    border-bottom: 1px solid rgba(192,57,43,0.12);
+  }
+  .plain-problem-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--rust);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .plain-problem p { font-size: 11px; line-height: 1.85; color: var(--ash); }
+  .plain-fix-items { padding: 20px 28px; flex: 1; }
+  .plain-fix-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--aged);
+    align-items: flex-start;
+  }
+  .plain-fix-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .fix-badge {
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 7px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .plain-fix-item strong {
+    display: block;
+    font-size: 12px;
+    color: var(--dark);
+    margin-bottom: 5px;
+  }
+  .plain-fix-item p { font-size: 11px; line-height: 1.85; color: var(--ash); }
+
   /* ── REDUCED MOTION ── */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
@@ -1253,6 +1340,9 @@
     footer { flex-direction: column; gap: 12px; text-align: center; }
     table { min-width: 600px; }
     .back-to-top { bottom: 20px; right: 20px; }
+    .plain-fixes-header { padding: 40px 20px 30px; }
+    .plain-fix-grid { grid-template-columns: 1fr; }
+    .plain-fix-card { border-right: 1px solid var(--ink); }
     .plan-header { padding: 40px 20px 30px; }
     .pillar-header-row { grid-template-columns: 1fr; gap: 4px; padding: 24px 20px; }
     .pillar-big-num { display: none; }
@@ -1309,6 +1399,7 @@
     <a href="#deep-dive">Deep Dive</a>
     <a href="#cases">Cases</a>
     <a href="#solutions">Solutions</a>
+    <a href="#plain-fixes">Plain Fixes</a>
     <a href="#sectors">Sectors</a>
     <a href="#watchdogs">Watchdogs</a>
     <a href="#toolkit">Toolkit</a>
@@ -1512,6 +1603,97 @@
   <p class="pullquote-text">"Corruption is not just theft. It is a <span>tax on the poor</span> — paid in the form of roads that flood, hospitals with no medicine, and schools with no teachers."</p>
   <div class="pullquote-attr">— The Structural Reality of Policy Capture</div>
 </div>
+
+<!-- PLAIN FIXES -->
+<section class="plain-fixes-section reveal" id="plain-fixes">
+  <div class="plain-fixes-header">
+    <div class="section-tag">Plain Language</div>
+    <h2>Three Leaks. <em>Three Fixes.</em></h2>
+    <p>No jargon. No policy-speak. Here is what's broken in each of the three corruption channels — and the exact mechanism that stops each one.</p>
+  </div>
+
+  <div class="plain-fix-grid">
+
+    <!-- CHANNEL 1 -->
+    <div class="plain-fix-card">
+      <div class="plain-fix-card-num">Channel One</div>
+      <h3>Stopping the Contractor Scams</h3>
+      <div class="plain-problem">
+        <div class="plain-problem-label">The Problem</div>
+        <p>Government road and hospital contracts are intentionally overpriced. Contractors pay kickbacks to officials, use cheap materials, and the infrastructure breaks after a couple of monsoons. A new contract is issued. The cycle repeats.</p>
+      </div>
+      <div class="plain-fix-items">
+        <div class="plain-fix-item">
+          <span class="fix-badge">Fix 1</span>
+          <div>
+            <strong>Computers Choose the Winners</strong>
+            <p>Take human choice out entirely. An automated, un-bribable system secretly accepts project bids and picks the fairest price — removing all discretion, and therefore all bribery potential.</p>
+          </div>
+        </div>
+        <div class="plain-fix-item">
+          <span class="fix-badge">Fix 2</span>
+          <div>
+            <strong>Fix It or Lose Your Money</strong>
+            <p>Contractors must deposit 20% of their pay into a locked bank account for 10 years. Infrastructure fails early? The government uses that locked money to hire someone else to fix it. No excuses.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHANNEL 2 -->
+    <div class="plain-fix-card">
+      <div class="plain-fix-card-num">Channel Two</div>
+      <h3>Stopping the Welfare Leak</h3>
+      <div class="plain-problem">
+        <div class="plain-problem-label">The Problem</div>
+        <p>Billions meant for poor families — MGNREGA wages, school meals, housing grants — are stolen by local middlemen using fake or dead names on paper records. The money disappears before it reaches anyone.</p>
+      </div>
+      <div class="plain-fix-items">
+        <div class="plain-fix-item">
+          <span class="fix-badge">Fix 1</span>
+          <div>
+            <strong>No Fingerprint, No Pay</strong>
+            <p>Scrap the paper registers entirely. Workers must scan their fingerprints on-site to prove they did the work before any money is released. No physical presence, no payment.</p>
+          </div>
+        </div>
+        <div class="plain-fix-item">
+          <span class="fix-badge">Fix 2</span>
+          <div>
+            <strong>Direct to Mobile Wallets</strong>
+            <p>Bypass all local bosses, NGOs, and middlemen completely. Send welfare money directly from the central government into the citizen's personal bank account. No human chain means no leakage.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHANNEL 3 -->
+    <div class="plain-fix-card">
+      <div class="plain-fix-card-num">Channel Three</div>
+      <h3>Stopping Corporate Bribery</h3>
+      <div class="plain-problem">
+        <div class="plain-problem-label">The Problem</div>
+        <p>Business bosses secretly fund political parties to get favourable laws passed. Helpful government officials are then rewarded with multi-crore corporate board jobs right after they retire from public service.</p>
+      </div>
+      <div class="plain-fix-items">
+        <div class="plain-fix-item">
+          <span class="fix-badge">Fix 1</span>
+          <div>
+            <strong>Ban All Corporate Donations</strong>
+            <p>Ban companies from giving any money — including electoral bonds — to political parties. Parties must be funded transparently by individual citizens, with every rupee publicly disclosed in real time.</p>
+          </div>
+        </div>
+        <div class="plain-fix-item">
+          <span class="fix-badge">Fix 2</span>
+          <div>
+            <strong>The 5-Year Ban</strong>
+            <p>Retired officials cannot take jobs or board seats at companies they used to regulate for at least 5 years. Break this rule: lose your government pension and benefits permanently.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <!-- SOLUTIONS -->
 <div class="solutions-row reveal" id="solutions">
@@ -2107,7 +2289,7 @@
 
   // Active nav section highlight
   const navLinks = document.querySelectorAll('.site-nav a');
-  const sectionIds = ['stats', 'channels', 'deep-dive', 'cases', 'solutions', 'sectors', 'watchdogs', 'toolkit', 'loopholes', 'blueprint', 'radical-plan', 'voices'];
+  const sectionIds = ['stats', 'channels', 'deep-dive', 'cases', 'solutions', 'plain-fixes', 'sectors', 'watchdogs', 'toolkit', 'loopholes', 'blueprint', 'radical-plan', 'voices'];
   const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
 
   const navObserver = new IntersectionObserver((entries) => {
