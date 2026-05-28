@@ -1269,48 +1269,45 @@
     line-height: 1.2;
     border-bottom: 1px solid var(--aged);
   }
-  .plain-problem {
-    padding: 20px 28px;
-    background: rgba(192,57,43,0.05);
-    border-bottom: 1px solid rgba(192,57,43,0.12);
+  .pf-pair {
+    display: grid;
+    grid-template-columns: 1fr 32px 1fr;
+    border-bottom: 1px solid var(--aged);
   }
-  .plain-problem-label {
-    font-size: 9px;
+  .pf-pair:last-child { border-bottom: none; }
+  .pf-left {
+    padding: 18px 20px;
+    background: rgba(192,57,43,0.04);
+    border-right: 1px solid rgba(192,57,43,0.1);
+  }
+  .pf-connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(192,57,43,0.03);
+    color: var(--rust);
+    font-size: 16px;
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+  .pf-right {
+    padding: 18px 20px;
+    border-left: 1px solid rgba(230,126,34,0.15);
+    background: rgba(230,126,34,0.03);
+  }
+  .pf-label {
+    font-size: 8px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--rust);
     font-weight: 600;
-    margin-bottom: 8px;
-  }
-  .plain-problem p { font-size: 11px; line-height: 1.85; color: var(--ash); }
-  .plain-fix-items { padding: 20px 28px; flex: 1; }
-  .plain-fix-item {
-    display: flex;
-    gap: 14px;
-    margin-bottom: 18px;
-    padding-bottom: 18px;
-    border-bottom: 1px solid var(--aged);
-    align-items: flex-start;
-  }
-  .plain-fix-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-  .fix-badge {
-    background: var(--ink);
-    color: var(--paper);
-    font-size: 8px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 4px 7px;
-    white-space: nowrap;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-  .plain-fix-item strong {
+    margin-bottom: 6px;
     display: block;
-    font-size: 12px;
-    color: var(--dark);
-    margin-bottom: 5px;
   }
-  .plain-fix-item p { font-size: 11px; line-height: 1.85; color: var(--ash); }
+  .pf-prob-label { color: var(--rust); }
+  .pf-fix-label { color: var(--saffron); }
+  .pf-left p { font-size: 11px; line-height: 1.8; color: var(--ash); }
+  .pf-right strong { display: block; font-size: 12px; color: var(--dark); margin-bottom: 5px; }
+  .pf-right p { font-size: 11px; line-height: 1.8; color: var(--ash); }
 
   /* ── REDUCED MOTION ── */
   @media (prefers-reduced-motion: reduce) {
@@ -1343,6 +1340,10 @@
     .plain-fixes-header { padding: 40px 20px 30px; }
     .plain-fix-grid { grid-template-columns: 1fr; }
     .plain-fix-card { border-right: 1px solid var(--ink); }
+    .pf-pair { grid-template-columns: 1fr; }
+    .pf-connector { padding: 6px 0; font-size: 20px; justify-content: flex-start; padding-left: 18px; border-left: none; background: none; }
+    .pf-left { border-right: none; border-bottom: 1px dashed rgba(192,57,43,0.2); }
+    .pf-right { border-left: none; }
     .plan-header { padding: 40px 20px 30px; }
     .pillar-header-row { grid-template-columns: 1fr; gap: 4px; padding: 24px 20px; }
     .pillar-big-num { display: none; }
@@ -1618,24 +1619,28 @@
     <div class="plain-fix-card">
       <div class="plain-fix-card-num">Channel One</div>
       <h3>Stopping the Contractor Scams</h3>
-      <div class="plain-problem">
-        <div class="plain-problem-label">The Problem</div>
-        <p>Government road and hospital contracts are intentionally overpriced. Contractors pay kickbacks to officials, use cheap materials, and the infrastructure breaks after a couple of monsoons. A new contract is issued. The cycle repeats.</p>
-      </div>
-      <div class="plain-fix-items">
-        <div class="plain-fix-item">
-          <span class="fix-badge">Fix 1</span>
-          <div>
-            <strong>Computers Choose the Winners</strong>
-            <p>Take human choice out entirely. An automated, un-bribable system secretly accepts project bids and picks the fairest price — removing all discretion, and therefore all bribery potential.</p>
-          </div>
+      <div class="pf-pair">
+        <div class="pf-left">
+          <span class="pf-label pf-prob-label">Problem</span>
+          <p>Officials hand-pick contractors and take kickbacks, inflating costs. Contractors use cheap materials to recover their bribe — roads collapse after the first monsoon. A new contract is issued. Repeat.</p>
         </div>
-        <div class="plain-fix-item">
-          <span class="fix-badge">Fix 2</span>
-          <div>
-            <strong>Fix It or Lose Your Money</strong>
-            <p>Contractors must deposit 20% of their pay into a locked bank account for 10 years. Infrastructure fails early? The government uses that locked money to hire someone else to fix it. No excuses.</p>
-          </div>
+        <div class="pf-connector">→</div>
+        <div class="pf-right">
+          <span class="pf-label pf-fix-label">Fix 1</span>
+          <strong>Computers Choose the Winners</strong>
+          <p>Automated sealed-bid system picks the fairest price with no human involved — removes all discretion, and therefore all bribery.</p>
+        </div>
+      </div>
+      <div class="pf-pair">
+        <div class="pf-left">
+          <span class="pf-label pf-prob-label">Problem</span>
+          <p>Even when caught using substandard materials, contractors face no real financial consequence — they've already been paid in full.</p>
+        </div>
+        <div class="pf-connector">→</div>
+        <div class="pf-right">
+          <span class="pf-label pf-fix-label">Fix 2</span>
+          <strong>Fix It or Lose Your Money</strong>
+          <p>20% of payment locked for 10 years. Infrastructure fails early? Government uses that locked fund to repair it. No excuses.</p>
         </div>
       </div>
     </div>
@@ -1644,24 +1649,28 @@
     <div class="plain-fix-card">
       <div class="plain-fix-card-num">Channel Two</div>
       <h3>Stopping the Welfare Leak</h3>
-      <div class="plain-problem">
-        <div class="plain-problem-label">The Problem</div>
-        <p>Billions meant for poor families — MGNREGA wages, school meals, housing grants — are stolen by local middlemen using fake or dead names on paper records. The money disappears before it reaches anyone.</p>
-      </div>
-      <div class="plain-fix-items">
-        <div class="plain-fix-item">
-          <span class="fix-badge">Fix 1</span>
-          <div>
-            <strong>No Fingerprint, No Pay</strong>
-            <p>Scrap the paper registers entirely. Workers must scan their fingerprints on-site to prove they did the work before any money is released. No physical presence, no payment.</p>
-          </div>
+      <div class="pf-pair">
+        <div class="pf-left">
+          <span class="pf-label pf-prob-label">Problem</span>
+          <p>Middlemen register fake or dead names in paper records and collect MGNREGA wages, school meal funds, and housing grants on their behalf. Billions vanish before reaching real people.</p>
         </div>
-        <div class="plain-fix-item">
-          <span class="fix-badge">Fix 2</span>
-          <div>
-            <strong>Direct to Mobile Wallets</strong>
-            <p>Bypass all local bosses, NGOs, and middlemen completely. Send welfare money directly from the central government into the citizen's personal bank account. No human chain means no leakage.</p>
-          </div>
+        <div class="pf-connector">→</div>
+        <div class="pf-right">
+          <span class="pf-label pf-fix-label">Fix 1</span>
+          <strong>No Fingerprint, No Pay</strong>
+          <p>Workers scan fingerprints on-site to confirm presence before any payment releases. A fake name has no fingerprint — fraud is structurally impossible.</p>
+        </div>
+      </div>
+      <div class="pf-pair">
+        <div class="pf-left">
+          <span class="pf-label pf-prob-label">Problem</span>
+          <p>Even legitimate welfare passes through a long chain of local officials and NGO intermediaries — each a potential skimming point before money reaches the intended family.</p>
+        </div>
+        <div class="pf-connector">→</div>
+        <div class="pf-right">
+          <span class="pf-label pf-fix-label">Fix 2</span>
+          <strong>Direct to Mobile Wallets</strong>
+          <p>Central government transfers funds directly into the citizen's bank account. No human chain, no leakage — already proven under DBT for LPG subsidies.</p>
         </div>
       </div>
     </div>
@@ -1669,25 +1678,29 @@
     <!-- CHANNEL 3 -->
     <div class="plain-fix-card">
       <div class="plain-fix-card-num">Channel Three</div>
-      <h3>Stopping Corporate Bribery</h3>
-      <div class="plain-problem">
-        <div class="plain-problem-label">The Problem</div>
-        <p>Business bosses secretly fund political parties to get favourable laws passed. Helpful government officials are then rewarded with multi-crore corporate board jobs right after they retire from public service.</p>
-      </div>
-      <div class="plain-fix-items">
-        <div class="plain-fix-item">
-          <span class="fix-badge">Fix 1</span>
-          <div>
-            <strong>Ban All Corporate Donations</strong>
-            <p>Ban companies from giving any money — including electoral bonds — to political parties. Parties must be funded transparently by individual citizens, with every rupee publicly disclosed in real time.</p>
-          </div>
+      <h3>Stopping Corporate Capture</h3>
+      <div class="pf-pair">
+        <div class="pf-left">
+          <span class="pf-label pf-prob-label">Problem</span>
+          <p>Companies secretly fund political parties via electoral bonds and shell donations to get favourable laws, contracts, or regulators in return — a legalised bribe at national scale.</p>
         </div>
-        <div class="plain-fix-item">
-          <span class="fix-badge">Fix 2</span>
-          <div>
-            <strong>The 5-Year Ban</strong>
-            <p>Retired officials cannot take jobs or board seats at companies they used to regulate for at least 5 years. Break this rule: lose your government pension and benefits permanently.</p>
-          </div>
+        <div class="pf-connector">→</div>
+        <div class="pf-right">
+          <span class="pf-label pf-fix-label">Fix 1</span>
+          <strong>Ban All Corporate Donations</strong>
+          <p>Zero corporate funding to any party. Parties must be funded only by individual citizens, every rupee disclosed in real time on a public ledger.</p>
+        </div>
+      </div>
+      <div class="pf-pair">
+        <div class="pf-left">
+          <span class="pf-label pf-prob-label">Problem</span>
+          <p>Officials who gave companies favourable treatment are rewarded with multi-crore board seats immediately after retirement — the delayed bribe that current cooling-off rules don't prevent.</p>
+        </div>
+        <div class="pf-connector">→</div>
+        <div class="pf-right">
+          <span class="pf-label pf-fix-label">Fix 2</span>
+          <strong>The 5-Year Ban</strong>
+          <p>No regulated-industry board seat or advisory role for 5 years after leaving office. Breach it: lose your entire government pension, permanently.</p>
         </div>
       </div>
     </div>
