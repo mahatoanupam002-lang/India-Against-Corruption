@@ -1309,6 +1309,161 @@
   .pf-right strong { display: block; font-size: 12px; color: var(--dark); margin-bottom: 5px; }
   .pf-right p { font-size: 11px; line-height: 1.8; color: var(--ash); }
 
+  /* ── SECTOR BLUEPRINT ── */
+  .sector-bp-section { border-bottom: 2px solid var(--ink); }
+  .sector-bp-header {
+    padding: 50px 40px 36px;
+    border-bottom: 1px solid var(--aged);
+  }
+  .sector-bp-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 14px;
+  }
+  .sector-bp-header h2 em { color: var(--rust); }
+  .sector-bp-header p { font-size: 12px; line-height: 1.9; color: var(--ash); max-width: 640px; }
+  .sector-bp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--ink);
+    border-left: 1px solid var(--ink);
+  }
+  .sector-bp-card {
+    border-right: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    display: flex;
+    flex-direction: column;
+  }
+  .sector-bp-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 28px 0;
+  }
+  .sector-bp-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ash);
+  }
+  .sector-bp-icon {
+    font-size: 16px;
+    line-height: 1;
+  }
+  .sector-bp-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--dark);
+    padding: 10px 28px 16px;
+    line-height: 1.2;
+    border-bottom: 1px solid var(--aged);
+  }
+
+  /* ── WATCHDOG SYSTEM ── */
+  .watchdog-sys-section {
+    background: var(--dark);
+    color: var(--paper);
+    border-bottom: 2px solid var(--ink);
+  }
+  .ws-header {
+    padding: 50px 40px 36px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    max-width: 780px;
+  }
+  .ws-header .section-tag {
+    background: rgba(230,126,34,0.2);
+    color: var(--saffron);
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    margin-bottom: 16px;
+  }
+  .ws-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 14px;
+  }
+  .ws-header h2 em { color: var(--saffron); }
+  .ws-header p { font-size: 12px; line-height: 1.9; color: rgba(245,239,224,0.65); max-width: 640px; }
+  .ws-body {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .ws-flow-col {
+    padding: 36px 32px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .ws-node {
+    width: 100%;
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 14px 18px;
+    text-align: center;
+  }
+  .ws-node strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    color: var(--paper);
+    margin-bottom: 4px;
+  }
+  .ws-node span { font-size: 10px; color: rgba(245,239,224,0.5); letter-spacing: 0.5px; }
+  .ws-node-citizen { border-color: var(--saffron); background: rgba(230,126,34,0.08); }
+  .ws-node-engine { border-color: rgba(255,255,255,0.25); background: rgba(255,255,255,0.04); }
+  .ws-node-cag { border-color: rgba(212,160,23,0.4); background: rgba(212,160,23,0.06); }
+  .ws-node-cvc { border-color: rgba(212,160,23,0.4); background: rgba(212,160,23,0.06); }
+  .ws-node-cbi { border-color: rgba(192,57,43,0.5); background: rgba(192,57,43,0.08); }
+  .ws-flow-arrow {
+    font-size: 18px;
+    color: rgba(245,239,224,0.3);
+    padding: 6px 0;
+    line-height: 1;
+  }
+  .ws-flow-bottom-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: 100%;
+  }
+  .ws-mechs-col {
+    padding: 36px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .ws-mech {
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .ws-mech:last-child { border-bottom: none; }
+  .ws-mech-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--saffron);
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  .ws-mech h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--paper);
+    margin-bottom: 10px;
+  }
+  .ws-mech p { font-size: 12px; line-height: 1.85; color: rgba(245,239,224,0.6); }
+
   /* ── REDUCED MOTION ── */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
@@ -1344,6 +1499,13 @@
     .pf-connector { padding: 6px 0; font-size: 20px; justify-content: flex-start; padding-left: 18px; border-left: none; background: none; }
     .pf-left { border-right: none; border-bottom: 1px dashed rgba(192,57,43,0.2); }
     .pf-right { border-left: none; }
+    .sector-bp-header { padding: 40px 20px 30px; }
+    .sector-bp-grid { grid-template-columns: 1fr; }
+    .sector-bp-card { border-right: 1px solid var(--ink); }
+    .ws-body { grid-template-columns: 1fr; }
+    .ws-flow-col { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .ws-header { padding: 40px 20px 30px; }
+    .ws-mechs-col { padding: 30px 20px; }
     .plan-header { padding: 40px 20px 30px; }
     .pillar-header-row { grid-template-columns: 1fr; gap: 4px; padding: 24px 20px; }
     .pillar-big-num { display: none; }
@@ -1402,7 +1564,9 @@
     <a href="#solutions">Solutions</a>
     <a href="#plain-fixes">Plain Fixes</a>
     <a href="#sectors">Sectors</a>
+    <a href="#sector-blueprint">Sector Fixes</a>
     <a href="#watchdogs">Watchdogs</a>
+    <a href="#watchdog-system">System</a>
     <a href="#toolkit">Toolkit</a>
     <a href="#loopholes">Loopholes</a>
     <a href="#blueprint">Blueprint</a>
@@ -1786,6 +1950,168 @@
   </div>
 </section>
 
+<!-- SECTOR BLUEPRINT -->
+<section class="sector-bp-section reveal" id="sector-blueprint">
+  <div class="sector-bp-header">
+    <div class="section-tag">Tech-Driven Reform</div>
+    <h2>The Sector-by-Sector <em>Fix</em></h2>
+    <p>Six sectors. Six specific mechanisms. Each one eliminates human discretion at the exact point where corruption enters — not policy pledges, but structural rewiring.</p>
+  </div>
+  <div class="sector-bp-grid">
+
+    <!-- POLICE -->
+    <div class="sector-bp-card">
+      <div class="sector-bp-meta">
+        <span class="sector-bp-icon" aria-hidden="true">👮</span>
+        <span class="sector-bp-num">Sector 01</span>
+      </div>
+      <h3>Police &amp; Law Enforcement</h3>
+      <div class="pf-pair">
+        <div class="pf-left">
+          <span class="pf-label pf-prob-label">Problem</span>
+          <p>Systemic extortion at traffic stops, raids, and custody. Bribes demanded for filing FIRs, granting bail, and settling cases.</p>
+        </div>
+        <div class="pf-connector">→</div>
+        <div class="pf-right">
+          <span class="pf-label pf-fix-label">Fix 1</span>
+          <strong>Cloud-Linked Bodycams</strong>
+          <p>Continuous recording streamed to a decentralized public server. Deliberate audio/video cuts auto-flagged for review.</p>
+        </div>
+      </div>
+      <div class="pf-pair">
+        <div class="pf-left">
+          <span class="pf-label pf-prob-label">Problem</span>
+          <p>Police hold sole power to delay or deny FIR registration and control bail — both are extortion leverage points.</p>
+        </div>
+        <div class="pf-connector">→</div>
+        <div class="pf-right">
+          <span class="pf-label pf-fix-label">Fix 2</span>
+          <strong>Digital FIRs &amp; Automated Bail</strong>
+          <p>Independent self-service FIR portal. For minor offences, bail eligibility is calculated and approved automatically — no officer discretion, no bribe possible.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEALTHCARE -->
+    <div class="sector-bp-card">
+      <div class="sector-bp-meta">
+        <span class="sector-bp-icon" aria-hidden="true">🏥</span>
+        <span class="sector-bp-num">Sector 02</span>
+      </div>
+      <h3>Healthcare &amp; Public Hospitals</h3>
+      <div class="pf-pair">
+        <div class="pf-left">
+          <span class="pf-label pf-prob-label">Problem</span>
+          <p>Medicine stocks stolen and sold on the black market. Patients pay bribes to staff who control which patients receive limited supplies.</p>
+        </div>
+        <div class="pf-connector">→</div>
+        <div class="pf-right">
+          <span class="pf-label pf-fix-label">Fix 1</span>
+          <strong>QR-Coded Medicine Tracking</strong>
+          <p>Every strip carries a unique QR code, scanned against the patient's verified ID at dispensing. Creates an auditable chain that structurally blocks black-market diversion.</p>
+        </div>
+      </div>
+      <div class="pf-pair">
+        <div class="pf-left">
+          <span class="pf-label pf-prob-label">Problem</span>
+          <p>Doctors and staff manually control bed allocation — the discretion becomes a bribe opportunity for admission into overburdened hospitals.</p>
+        </div>
+        <div class="pf-connector">→</div>
+        <div class="pf-right">
+          <span class="pf-label pf-fix-label">Fix 2</span>
+          <strong>Algorithmic Bed Allocation</strong>
+          <p>Transparent public dashboard allocates beds strictly by triage severity and wait time — like booking a train seat. Zero manual staff control over who gets in next.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LAND -->
+    <div class="sector-bp-card">
+      <div class="sector-bp-meta">
+        <span class="sector-bp-icon" aria-hidden="true">🏗️</span>
+        <span class="sector-bp-num">Sector 03</span>
+      </div>
+      <h3>Land Registration &amp; Property</h3>
+      <div class="pf-pair">
+        <div class="pf-left">
+          <span class="pf-label pf-prob-label">Problem</span>
+          <p>Sub-registrars take bribes to fast-track files, commit mutation fraud (falsifying ownership changes), and manipulate local tax rates with little oversight.</p>
+        </div>
+        <div class="pf-connector">→</div>
+        <div class="pf-right">
+          <span class="pf-label pf-fix-label">Fix</span>
+          <strong>Digital Smart Contracts</strong>
+          <p>All land titles move to an open digital property ledger. On sale, title transfer executes automatically once the fixed fee is paid — the local sub-registrar office is bypassed entirely.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="sector-bp-card">
+      <div class="sector-bp-meta">
+        <span class="sector-bp-icon" aria-hidden="true">🎓</span>
+        <span class="sector-bp-num">Sector 04</span>
+      </div>
+      <h3>Education &amp; Admissions</h3>
+      <div class="pf-pair">
+        <div class="pf-left">
+          <span class="pf-label pf-prob-label">Problem</span>
+          <p>Mass exam paper leaks (Vyapam affected 13+ exams across MP). Physical paper printing and distribution creates dozens of interception points before the exam even starts.</p>
+        </div>
+        <div class="pf-connector">→</div>
+        <div class="pf-right">
+          <span class="pf-label pf-fix-label">Fix</span>
+          <strong>Just-in-Time Encrypted Exams</strong>
+          <p>Scrap physical paper entirely. Heavily encrypted questions transmit to individual terminals minutes before the timer starts — no advance physical copy exists to leak.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PUBLIC UTILITIES -->
+    <div class="sector-bp-card">
+      <div class="sector-bp-meta">
+        <span class="sector-bp-icon" aria-hidden="true">⚡</span>
+        <span class="sector-bp-num">Sector 05</span>
+      </div>
+      <h3>Public Utilities &amp; Services</h3>
+      <div class="pf-pair">
+        <div class="pf-left">
+          <span class="pf-label pf-prob-label">Problem</span>
+          <p>Officials delay electricity meters, water connections, and ration cards indefinitely — using the delay itself to extort bribes from citizens who have no other option.</p>
+        </div>
+        <div class="pf-connector">→</div>
+        <div class="pf-right">
+          <span class="pf-label pf-fix-label">Fix</span>
+          <strong>Guaranteed 14-Day Delivery</strong>
+          <p>Apply online, a timer starts. If the department neither delivers nor rejects with a valid legal reason within 14 days, the service auto-approves and a financial penalty is deducted from the responsible official's salary.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- JUDICIARY -->
+    <div class="sector-bp-card">
+      <div class="sector-bp-meta">
+        <span class="sector-bp-icon" aria-hidden="true">⚖️</span>
+        <span class="sector-bp-num">Sector 06</span>
+      </div>
+      <h3>Judiciary &amp; Legal System</h3>
+      <div class="pf-pair">
+        <div class="pf-left">
+          <span class="pf-label pf-prob-label">Problem</span>
+          <p>Lawyers and fixers intentionally stretch out hearings using adjournment culture — exploiting the 50 million pending-case backlog to extort desperate clients who need a date moved.</p>
+        </div>
+        <div class="pf-connector">→</div>
+        <div class="pf-right">
+          <span class="pf-label pf-fix-label">Fix</span>
+          <strong>Strict Adjournment Caps</strong>
+          <p>Automated case management software limits each judge to a maximum of two postponements per case. A third attempt to stall defaults the ruling to the present party automatically.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- WATCHDOGS -->
 <div class="watchdogs-row reveal" id="watchdogs">
   <div class="section-tag" style="background: rgba(230,126,34,0.18); color: var(--saffron); display: inline-block; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; padding: 4px 10px; margin-bottom: 16px;">Oversight Institutions</div>
@@ -1837,6 +2163,60 @@
 
   </div>
 </div>
+
+<!-- WATCHDOG SYSTEM -->
+<section class="watchdog-sys-section reveal" id="watchdog-system">
+  <div class="ws-header">
+    <div class="section-tag">System Integration</div>
+    <h2>Weaponizing the <em>Watchdogs</em></h2>
+    <p>India already has Lokpal, CVC, CBI, and CAG. The missing piece is a connected, automated pipeline that routes citizen complaints to the right body — and holds that body to a hard deadline.</p>
+  </div>
+  <div class="ws-body">
+    <div class="ws-flow-col">
+      <div class="ws-node ws-node-citizen">
+        <strong>Citizen Filing Portal</strong>
+        <span>One-click via CPGRAMS / RTI</span>
+      </div>
+      <div class="ws-flow-arrow">↓</div>
+      <div class="ws-node ws-node-engine">
+        <strong>Automated Route Engine</strong>
+        <span>Classifies &amp; routes instantly</span>
+      </div>
+      <div class="ws-flow-arrow">↓</div>
+      <div class="ws-flow-bottom-row">
+        <div class="ws-node ws-node-cag">
+          <strong>CAG</strong>
+          <span>Tracks leaked cash &amp; systemic flaws</span>
+        </div>
+        <div class="ws-node ws-node-cvc">
+          <strong>CVC</strong>
+          <span>Flags conduct &amp; corrupt staff</span>
+        </div>
+        <div class="ws-node ws-node-cbi">
+          <strong>CBI</strong>
+          <span>Arrests &amp; seizes assets</span>
+        </div>
+      </div>
+    </div>
+    <div class="ws-mechs-col">
+      <div class="ws-mech">
+        <div class="ws-mech-num">01 — Single-Window Portal</div>
+        <h4>One Dashboard. Every Agency.</h4>
+        <p>Merge the filing interfaces of CPGRAMS, RTI, and CVC into a single citizen dashboard. Snap a photo of a corrupt act, describe it, submit — an automated backend classifies the complaint and routes it to the correct agency immediately, with no manual forwarding required.</p>
+      </div>
+      <div class="ws-mech">
+        <div class="ws-mech-num">02 — CAG → CBI Fast-Track</div>
+        <h4>Audit Findings Trigger Investigations Automatically</h4>
+        <p>When the Comptroller &amp; Auditor General uncovers major procurement irregularities or scheme leakages, the evidence must be automatically fed into the CBI's Anti-Corruption Branch — triggering an immediate judicial inquiry. This bypasses the current requirement for a separate political or ministerial greenlight, which is where investigations are routinely killed.</p>
+      </div>
+      <div class="ws-mech">
+        <div class="ws-mech-num">03 — Mandatory 90-Day Resolution</div>
+        <h4>Hard Deadline. No Extensions.</h4>
+        <p>Any citizen complaint forwarded by Lokpal or CVC must have a legally mandated 90-day hard deadline for investigation and initial action. The current system allows complaints to sit for years with no consequence to the agency that ignores them. Breach the deadline: the responsible officer faces automatic disciplinary action.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- CITIZEN TOOLKIT -->
 <section class="toolkit-section reveal" id="toolkit">
@@ -2302,7 +2682,7 @@
 
   // Active nav section highlight
   const navLinks = document.querySelectorAll('.site-nav a');
-  const sectionIds = ['stats', 'channels', 'deep-dive', 'cases', 'solutions', 'plain-fixes', 'sectors', 'watchdogs', 'toolkit', 'loopholes', 'blueprint', 'radical-plan', 'voices'];
+  const sectionIds = ['stats', 'channels', 'deep-dive', 'cases', 'solutions', 'plain-fixes', 'sectors', 'sector-blueprint', 'watchdogs', 'watchdog-system', 'toolkit', 'loopholes', 'blueprint', 'radical-plan', 'voices'];
   const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
 
   const navObserver = new IntersectionObserver((entries) => {
